@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reproductor de Radio Programado</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        background-color: #f0f0f0;
+      }
+      .container {
+        text-align: center;
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        max-width: 400px;
+        width: 100%;
+        position: relative; /* Para posicionar el endTime */
+      }
+      #playPauseButton {
+        cursor: pointer;
+        margin: 20px auto;
+      }
+      #playPauseButton img {
+        width: 50px;
+        height: 50px;
+      }
+      #currentStation {
+        margin: 10px 0;
+        font-size: 1.2em;
+        color: #333;
+      }
+      #stationList {
+        list-style: none;
+        padding: 0;
+      }
+      #stationList li {
+        padding: 10px;
+        margin: 5px 0;
+        background-color: #e0e0e0;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+      #stationList li:hover {
+        background-color: #d0d0d0;
+      }
+      #stationList li.active {
+        background-color: #4caf50;
+        color: white;
+      }
+      audio {
+        display: none; /* Ocultar el reproductor nativo */
+      }
+      h1 {
+        font-size: 1.5em;
+        color: #222;
+        margin: 0 0 10px 0;
+      }
+      #endTime {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 0.9em;
+        color: #555;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 id="programTitle">Radio Programada</h1>
+      <span id="endTime"></span>
+      <div id="playPauseButton">
+        <img
+          id="playPauseIcon"
+          src="https://img.icons8.com/ios-filled/50/000000/play.png"
+          alt="Play"
+        />
+      </div>
+      <div id="currentStation">Cargando...</div>
+      <audio id="radioPlayer"></audio>
+      <h2>Estaciones Disponibles</h2>
+      <ul id="stationList"></ul>
+    </div>
+
+    <script>
+      // Configuración de estaciones y horarios (con segundos)
+      const schedule = [
+        {
+          startTime: "04:00:00",
+          endTime: "05:56:00",
+          station: {
+            name: "Radio Vida",
+            url: "https://radio.transmite.pe/9318/stream",
+          },
+        },
+        {
+          startTime: "05:56:03",
+          endTime: "06:00:00",
+          station: {
+            name: "Radio Radio La uncion",
+            url: "https://jml-stream.com:8010/app.aac",
+          },
+        },
+        {
+          startTime: "06:00:03",
+          endTime: "06:56:00",
+          station: {
+            name: "Radio Vida",
+            url: "https://radio.transmite.pe/9318/stream",
+          },
+        },
+        {
+          startTime: "06:56:03",
+          endTime: "07:00:00",
+          station: {
+            name: "Radio Radio La uncion",
+            url: "https://jml-stream.com:8010/app.aac",
+          },
+        },
+        {
+          startTime: "07:00:03",
+          endTime: "08:56:00",
+          station: {
+            name: "Radio Vida",
+            url: "https://radio.transmite.pe/9318/stream",
+          },
+        },
+        {
+          startTime: "07:56:03",
+          endTime: "08:00:00",
+          station: {
+            name: "Radio Radio La uncion",
+            url: "https://jml-stream.com:8010/app.aac",
+          },
+        },
+        {
+          startTime: "08:00:03",
+          endTime: "09:56:00",
+          station: {
+            name: "Radio Nueva Luz",
+            url: "https://conectperu.com/8324/stream",
+          },
+        },
+        {
+          startTime: "08:56:03",
+          endTime: "09:00:00",
+          station: {
+            name: "Radio Radio La uncion",
+            url: "https://jml-stream.com:8010/app.aac",
+          },
+        },
+        {
+          startTime: "09:00:03",
+          endTime: "10:56:00",
+          station: {
+            name: "Radio Nueva Luz",
+            url: "https://conectperu.com/8324/stream",
+          },
+        },
+        {
+          startTime: "10:56:03",
+          endTime: "11:00:00",
+          station: {
+            name: "Radio Radio La uncion",
+            url: "https://jml-stream.com:8010/app.aac",
+          },
+        },
+        {
+          startTime: "11:00:03",
+          endTime: "11:56:00",
+          station: {
+            name: "Radio Nueva Luz",
+            url: "https://conectperu.com/8324/stream",
+          },
+        },
+        {
+          startTime: "17:00:00",
+          endTime: "17:56:00",
+          station: {
+            name: "Radio Vida",
+            url: "https://radio.transmite.pe/9318/stream",
+          },
+        },
+      ];
+
+      const stations = [
+        {
+          name: "Radio Mas Vida",
+          url: "https://masvida.radionline.com.es/listen/m%C3%A1s_vida_rock_and_pop/radio.mp3",
+        },
+        { name: "Radio Vida", url: "https://radio.transmite.pe/9318/stream" },
+        { name: "Radio Nueva Luz", url: "https://conectperu.com/8324/stream" },
+        {
+          name: "Radio Bethel",
+          url: "https://alfa.betheltv.tv/radiobethel/1/icecast.audio",
+        },
+      ];
+
+      const radioPlayer = document.getElementById("radioPlayer");
+      const playPauseButton = document.getElementById("playPauseButton");
+      const playPauseIcon = document.getElementById("playPauseIcon");
+      const currentStationDiv = document.getElementById("currentStation");
+      const stationList = document.getElementById("stationList");
+      const programTitle = document.getElementById("programTitle");
+      const endTimeSpan = document.getElementById("endTime");
+      let isManualSelection = false;
+      let isPlaying = false;
+
+      // Renderizar lista de estaciones
+      function renderStationList() {
+        stationList.innerHTML = "";
+        stations.forEach((station) => {
+          const li = document.createElement("li");
+          li.textContent = station.name;
+          li.addEventListener("click", () => {
+            playStation(station);
+            isManualSelection = true;
+            updateStationListUI(station.url);
+            updateProgramTitle(station.name, null);
+          });
+          stationList.appendChild(li);
+        });
+      }
+
+      // Actualizar la UI de la lista de estaciones
+      function updateStationListUI(activeUrl) {
+        Array.from(stationList.children).forEach((li) => {
+          const station = stations.find((s) => s.name === li.textContent);
+          li.classList.toggle("active", station.url === activeUrl);
+        });
+      }
+
+      // Convertir hora en formato HH:mm:ss a segundos desde medianoche
+      function timeToSeconds(time) {
+        const [hours, minutes, seconds] = time.split(":").map(Number);
+        return hours * 3600 + minutes * 60 + seconds;
+      }
+
+      // Actualizar el título y hora de finalización
+      function updateProgramTitle(stationName, endTime) {
+        if (stationName && endTime !== null) {
+          programTitle.textContent = stationName;
+          endTimeSpan.textContent = `Finaliza: ${endTime}`;
+        } else if (stationName) {
+          programTitle.textContent = stationName;
+          endTimeSpan.textContent = "Selección manual";
+        } else {
+          programTitle.textContent = "Radio Programada";
+          endTimeSpan.textContent = "";
+        }
+      }
+
+      // Reproducir una estación
+      function playStation(station) {
+        radioPlayer.src = station.url;
+        currentStationDiv.textContent = `Reproduciendo: ${station.name}`;
+        const playPromise = radioPlayer.play();
+        if (playPromise !== undefined) {
+          playPromise
+            .catch((error) => {
+              console.log("Reproducción automática bloqueada:", error);
+              currentStationDiv.textContent =
+                "Haz clic en el botón para reproducir";
+              playPauseIcon.src =
+                "https://img.icons8.com/ios-filled/50/000000/play.png";
+              isPlaying = false;
+            })
+            .then(() => {
+              playPauseIcon.src =
+                "https://img.icons8.com/ios-filled/50/000000/pause.png";
+              isPlaying = true;
+            });
+        }
+        updateStationListUI(station.url);
+      }
+
+      // Obtener la estación programada según la hora actual
+      function getScheduledStation() {
+        const now = new Date();
+        const currentSeconds =
+          now.getHours() * 3600 + now.getMinutes() * 60 + now.getSeconds();
+        return schedule.find((s) => {
+          const startSeconds = timeToSeconds(s.startTime);
+          const endSeconds = timeToSeconds(s.endTime);
+          return currentSeconds >= startSeconds && currentSeconds < endSeconds;
+        });
+      }
+
+      // Verificar y actualizar la estación según el horario
+      function checkSchedule() {
+        if (!isManualSelection) {
+          const scheduled = getScheduledStation();
+          if (scheduled) {
+            if (radioPlayer.src !== scheduled.station.url || !isPlaying) {
+              playStation(scheduled.station);
+            }
+            updateProgramTitle(scheduled.station.name, scheduled.endTime);
+          } else {
+            radioPlayer.pause();
+            radioPlayer.src = "";
+            currentStationDiv.textContent =
+              "Selecciona una estación manualmente";
+            updateProgramTitle(null, null);
+            updateStationListUI(null);
+            playPauseIcon.src =
+              "https://img.icons8.com/ios-filled/50/000000/play.png";
+            isPlaying = false;
+          }
+        }
+        // Resetear selección manual al inicio de un nuevo programa
+        const now = new Date();
+        const currentSeconds =
+          now.getHours() * 3600 + now.getMinutes() * 60 + now.getSeconds();
+        schedule.forEach((s) => {
+          if (
+            currentSeconds === timeToSeconds(s.startTime) &&
+            now.getMilliseconds() < 100
+          ) {
+            isManualSelection = false;
+          }
+        });
+      }
+
+      // Controlar play/pausa con el botón personalizado
+      playPauseButton.addEventListener("click", () => {
+        if (radioPlayer.paused) {
+          const scheduled = getScheduledStation();
+          if (scheduled && !radioPlayer.src) {
+            playStation(scheduled.station);
+          } else {
+            radioPlayer.play().then(() => {
+              playPauseIcon.src =
+                "https://img.icons8.com/ios-filled/50/000000/pause.png";
+              isPlaying = true;
+            });
+          }
+        } else {
+          radioPlayer.pause();
+          playPauseIcon.src =
+            "https://img.icons8.com/ios-filled/50/000000/play.png";
+          isPlaying = false;
+        }
+      });
+
+      // Actualizar ícono cuando el audio se pausa o reproduce
+      radioPlayer.addEventListener("play", () => {
+        playPauseIcon.src =
+          "https://img.icons8.com/ios-filled/50/000000/pause.png";
+        isPlaying = true;
+      });
+      radioPlayer.addEventListener("pause", () => {
+        playPauseIcon.src =
+          "https://img.icons8.com/ios-filled/50/000000/play.png";
+        isPlaying = false;
+      });
+
+      // Inicializar
+      renderStationList();
+      checkSchedule();
+
+      // Verificar el horario cada segundo para transiciones instantáneas
+      setInterval(checkSchedule, 1000);
+
+      // Intentar reproducción automática al cargar
+      window.addEventListener("load", () => {
+        const scheduled = getScheduledStation();
+        if (scheduled) {
+          currentStationDiv.textContent = `Próxima: ${scheduled.station.name}`;
+          updateProgramTitle(scheduled.station.name, scheduled.endTime);
+          playStation(scheduled.station); // Intentar reproducción automática
+        } else {
+          currentStationDiv.textContent = "Próxima: Ninguna";
+          updateProgramTitle(null, null);
+          playPauseIcon.src =
+            "https://img.icons8.com/ios-filled/50/000000/play.png";
+          isPlaying = false;
+        }
+      });
+    </script>
+  </body>
+</html>
