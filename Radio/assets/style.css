@@ -1,0 +1,79 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+  }
+  .container {
+    text-align: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    position: relative; /* Para posicionar el endTime */
+  }
+  #playPauseButton {
+    cursor: pointer;
+    margin: 20px auto;
+  }
+  #playPauseButton img {
+    width: 50px;
+    height: 50px;
+  }
+  #currentStation {
+    margin: 10px 0;
+    font-size: 1.2em;
+    color: #333;
+  }
+  #stationList {
+    list-style: none;
+    padding: 0;
+  }
+  #stationList li {
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  #stationList li:hover {
+    background-color: #d0d0d0;
+  }
+  #stationList li.active {
+    background-color: #4caf50;
+    color: white;
+  }
+  audio {
+    display: none; /* Ocultar el reproductor nativo */
+  }
+  h1 {
+    font-size: 1.5em;
+    color: #222;
+    margin: 0 0 10px 0;
+  }
+  #endTime {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 0.9em;
+    color: #555;
+  }
+  #nextEvent {
+    margin-bottom: 0px; /* Espaciado debajo del contenedor */
+  }
+
+  #nextEvent h3 {
+    font-size: 0.9em; /* Cambia el tamaño del título */
+    color: #333; /* Cambia el color del título si es necesario */
+  }
+
+  #nextEvent p {
+    font-size: 0.8em; /* Cambia el tamaño del texto del detalle */
+    color: black;/* Cambia el color del texto si es necesario */
+  }
