@@ -101,7 +101,7 @@
       endTime: "17:00:00",
       station: {
         name: "Radio Nueva Luz ",
-        url: "https://masvida.radionline.com.es/listen/m%C3%A1s_vida_rock_and_pop/radio.mp3",
+        url: "https://conectperu.com/8324/stream",
       },
     },
      {
