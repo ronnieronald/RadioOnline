@@ -3,21 +3,37 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Reproductor de Radio Programado</title>
+    <title>Radio Online</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="shortcut icon" href="/assets/onda-de-sonido.png" type="image/x-icon">
    
   </head>
   <body>
     <div class="container">
-      <h1 id="programTitle">Radio Programada</h1>
+      <h1 id="programTitle"></h1>
       <span id="endTime"></span>
-      <div id="playPauseButton">
-        <img
-          id="playPauseIcon"
-          src="https://img.icons8.com/ios-filled/50/000000/play.png"
-          alt="Play"
-        />
+      <div id="controls">
+        <div id="scrollToStationsButton">
+          <img
+            src="https://img.icons8.com/?size=100&id=qYiiiITYvT0U&format=png&color=000000"
+            alt="Ir a estaciones"
+            id="scrollIcon"
+          />
+        </div>
+        <div id="playPauseButton">
+          <img
+            id="playPauseIcon"
+            src="https://img.icons8.com/ios-filled/50/000000/play.png"
+            alt="Play"
+          />
+        </div>
+        <div id="shuffleButton">
+          <img
+            src="https://img.icons8.com/?size=100&id=9986&format=png&color=000000"
+            alt="Seleccionar emisora aleatoria"
+            id="shuffleIcon"
+          />
+        </div>
       </div>
       <div id="nextEvent">
         <span id="nextEventTitle">Próximo evento:</span>
@@ -32,3 +48,4 @@
     <script src="script.js"></script>
   </body>
 </html>
+
