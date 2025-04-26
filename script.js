@@ -1,4 +1,4 @@
- // Configuración de estaciones y horarios (con segundos)
+// Configuración de estaciones y horarios (con segundos)
  const schedule = [
     {
   startTime: "04:00:03",
@@ -134,14 +134,14 @@
      },
 
      {
-        startTime: "00:00:03",
-        endTime: "04:00:00",
-        station: {
-          name: "Radio La Unción",
-          url: "https://jml-stream.com:8010/app.aac",
-        },
+      startTime: "00:00:03",
+      endTime: "04:00:00",
+      station: {
+        name: "Radio La Unción",
+        url: "https://jml-stream.com:8010/app.aac",
       },
-    ];
+    },
+  ];
 
     const stations = [
     {
@@ -381,4 +381,46 @@
         top: 0,
         behavior: "smooth", // Desplazamiento suave
       });
+    });
+
+    document.getElementById("shuffleButton").addEventListener("click", () => {
+      const stations = document.querySelectorAll("#stationList li");
+      if (stations.length > 0) {
+        const randomIndex = Math.floor(Math.random() * stations.length);
+        const randomStation = stations[randomIndex];
+        randomStation.click(); // Simula un clic en la emisora aleatoria
+      }
+      const modeIndicator = document.getElementById("modeIndicator");
+      modeIndicator.textContent = "Modo: Aleatorio"; // Cambiar el texto al tocar shuffle
+    });
+
+    document.getElementById("scrollToStationsButton").addEventListener("click", () => {
+      const stationList = document.getElementById("stationList");
+      stationList.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    });
+
+    // Detectar pérdida y reconexión de red
+    window.addEventListener("offline", () => {
+      console.log("Conexión a la red perdida. Pausando reproducción.");
+      radioPlayer.pause();
+      playPauseIcon.src = "https://img.icons8.com/ios-filled/50/000000/play.png";
+      isPlaying = false;
+    });
+
+    window.addEventListener("online", () => {
+      console.log("Conexión a la red restablecida. Intentando reanudar reproducción.");
+      if (!isManualSelection) {
+        const scheduled = getScheduledStation();
+        if (scheduled) {
+          playStation(scheduled.station);
+        }
+      } else if (radioPlayer.src) {
+        radioPlayer.play().then(() => {
+          playPauseIcon.src = "https://img.icons8.com/ios-filled/50/000000/pause.png";
+          isPlaying = true;
+        });
+      }
     });
