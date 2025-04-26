@@ -1,4 +1,4 @@
- body {
+body {
         font-family: Arial, sans-serif;
         display: flex;
         justify-content: center;
@@ -19,11 +19,12 @@
       }
       #playPauseButton {
         cursor: pointer;
-        margin: 20px auto;
+        margin: 0; /* Elimina el margen */
+        padding: 0; /* Elimina el espacio interno */
       }
       #playPauseButton img {
-        width: 50px;
-        height: 50px;
+        width: 40px; /* Ajusta el tamaño del ícono */
+        height: 40px;
       }
       #currentStation {
         margin: 10px 0;
@@ -104,4 +105,28 @@
 
       #scrollToTopButton:hover {
         background-color: #45a049;
+      }
+
+      #controls {
+        display: flex;
+        justify-content: space-between; /* Distribuir los elementos uniformemente */
+        align-items: center;
+        width: 82%; /* El contenedor ocupa el 80% del ancho total */
+        margin: 0 auto; /* Centrar el contenedor horizontalmente */
+        margin-top: 20px;
+      }
+
+      #scrollToStationsButton img,
+      #playPauseButton img,
+      #shuffleButton img {
+        width: 50px; /* Tamaño de los íconos */
+        height: 50px;
+        cursor: pointer;
+        transition: transform 0.2s;
+      }
+
+      #scrollToStationsButton img:hover,
+      #playPauseButton img:hover,
+      #shuffleButton img:hover {
+        transform: scale(1.1); /* Efecto de zoom al pasar el cursor */
       }
