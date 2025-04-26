@@ -55,7 +55,7 @@ body {
       }
       #programTitle {
         margin-top: 20px; /* Espacio entre el modo y el título */
-        font-size: 1.5em;
+        font-size: 1.1em;
         text-align: center; /* Centrar el título */
       }
       h1 {
@@ -72,7 +72,7 @@ body {
       }
       #nextEvent {
         margin-top: 10px;
-        font-size: 1em;
+        font-size: 0.9em;
         color: black; /* Cambiar el color del texto a negro */
         text-align: center;
       }
