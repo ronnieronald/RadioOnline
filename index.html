@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Radio Online</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="shortcut icon" href="/assets/onda-de-sonido.png" type="image/x-icon">
-   
+    <link
+      rel="shortcut icon"
+      href="/assets/onda-de-sonido.png"
+      type="image/x-icon"
+    />
   </head>
   <body>
     <div class="container">
@@ -40,12 +43,18 @@
         <div id="nextEventDetails"></div>
       </div>
       <audio id="radioPlayer"></audio>
+      <audio id="transitionAudio" src="assets/High Technology.mp3"></audio>
+      <div id="scheduleContainer">
+        <h2 id="scheduleTitle">En Curso</h2>
+        <ul id="programList"></ul>
+      </div>
+      <div id="currentDayIndicator"></div>
+  
+      <div id="modeIndicator">Modo: Automático</div>
       <h2>Estaciones Disponibles</h2>
       <ul id="stationList"></ul>
       <button id="scrollToTopButton">Volver arriba</button>
-      <div id="modeIndicator">Modo: Automático</div>
     </div>
     <script src="script.js"></script>
   </body>
 </html>
-
