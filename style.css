@@ -47,7 +47,7 @@ body {
         background-color: #d0d0d0;
       }
       #stationList li.active {
-        background-color: #4caf50;
+        background-color: #60B5FF;
         color: white;
       }
       audio {
@@ -95,7 +95,7 @@ body {
         padding: 10px 20px;
         font-size: 1em;
         color: white;
-        background-color: #4caf50;
+        background-color: #0b49e5;
         border: none;
         border-radius: 5px;
         cursor: pointer;
@@ -103,7 +103,7 @@ body {
       }
 
       #scrollToTopButton:hover {
-        background-color: #45a049;
+        background-color: #1c30e4;
       }
 
       #controls {
@@ -128,4 +128,89 @@ body {
       #playPauseButton img:hover,
       #shuffleButton img:hover {
         transform: scale(1.1); /* Efecto de zoom al pasar el cursor */
+      }
+
+      #scheduleContainer {
+        margin-top: 20px;
+        text-align: center;
+        background-color: #ffffff;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      #scheduleTitle {
+        font-size: 0.8em;
+        color: #333;
+        margin-bottom: 10px;
+      }
+
+      #programList {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .program-item {
+        display: flex;
+        justify-content: space-between; /* Mantener el espacio entre el nombre y la hora */
+        align-items: center; /* Centrar verticalmente los elementos */
+        padding: 10px 15px; /* Espacio interno */
+        border-bottom: 1px solid #ccc;
+        background-color: #f9f9f9; /* Fondo claro */
+        border-radius: 5px;
+        transition: background-color 0.3s ease; /* Transición suave al pasar el cursor */
+      }
+
+      .current-program {
+        background-color: #d4edda; /* Verde claro */
+        color: #0085f9; /* Verde oscuro */
+        font-weight: bold;
+        border: 1px solid #60B5FF; /* Borde verde oscuro */
+        padding: 10px 15px; /* Asegurar que el texto no esté al extremo */
+      }
+
+      .program-name {
+        font-family: "Source Code Pro", monospace; /* Cambiar la fuente */
+        font-optical-sizing: auto;
+        font-size: 0.73em;
+        margin-right: 10px; /* Espacio entre el nombre y la hora */
+        text-align: left;
+        flex: 1; /* Permitir que el nombre ocupe más espacio si es necesario */
+      }
+
+      .program-time {
+        text-align: right;
+        color: #555;
+        font-size: 0.9em;
+        margin-left: 10px; /* Espacio entre la hora y el borde */
+        flex-shrink: 0; /* Evitar que la hora se reduzca demasiado */
+        align-self: center; /* Asegurar que la hora esté centrada verticalmente */
+      }
+
+      #programList li {
+        margin: 5px 0;
+        padding: 10px;
+        background-color: #f0f0f0;
+        border-radius: 5px;
+        font-size: 0.9em;
+      }
+
+      #currentDayIndicator {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        font-size: 0.8em;
+        color: #000000;
+        background-color: #f0f0f0;
+        padding: 5px 10px;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        font-weight: bold;
+        border: 2px solid transparent; /* Borde inicial transparente */
+        transition: border 0.3s ease; /* Transición suave */
+      }
+
+      #currentDayIndicator:hover {
+        border: 2px solid #2a8fe8; /* Cambia el color y tamaño del borde al pasar el mouse */
       }
