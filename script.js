@@ -616,12 +616,14 @@ function updateCurrentDayIndicator() {
   const currentDayIndicator = document.getElementById("currentDayIndicator");
   currentDayIndicator.textContent = `${currentDay}`;
 
-  // Desplazar hacia el apartado de programación
+  // Elimina o comenta esta parte si no deseas el desplazamiento automático
+  /*
   const scheduleContainer = document.getElementById("scheduleContainer");
   scheduleContainer.scrollIntoView({
     behavior: "smooth", // Desplazamiento suave
     block: "start", // Alinear al inicio del contenedor
   });
+  */
 }
 
 // Inicializar
