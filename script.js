@@ -687,6 +687,16 @@ document.getElementById("currentDayIndicator").addEventListener("click", () => {
   });
 });
 
+document.getElementById("currentDayIndicator").addEventListener("keydown", (event) => {
+  if (event.key === "Enter" || event.key === " ") {
+    const scheduleContainer = document.getElementById("scheduleContainer");
+    scheduleContainer.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }
+});
+
 // Detectar pérdida y reconexión de red
 window.addEventListener("offline", () => {
   console.log("Conexión a la red perdida. Pausando reproducción.");
