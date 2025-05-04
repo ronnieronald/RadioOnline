@@ -48,7 +48,7 @@
         <h2 id="scheduleTitle">En Curso</h2>
         <ul id="programList"></ul>
       </div>
-      <div id="currentDayIndicator"></div>
+      <div id="currentDayIndicator" role="button" tabindex="0">Lunes</div>
   
       <div id="modeIndicator">Modo: Automático</div>
       <h2>Estaciones Disponibles</h2>
@@ -56,5 +56,14 @@
       <button id="scrollToTopButton">Volver arriba</button>
     </div>
     <script src="script.js"></script>
+    <script>
+      document.getElementById("currentDayIndicator").addEventListener("click", () => {
+        const scheduleContainer = document.getElementById("scheduleContainer");
+        scheduleContainer.scrollIntoView({
+          behavior: "smooth", // Desplazamiento suave
+          block: "start", // Alinear al inicio del contenedor
+        });
+      });
+    </script>
   </body>
 </html>
