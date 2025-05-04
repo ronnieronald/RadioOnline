@@ -1,5 +1,15 @@
 // Configuración de estaciones y horarios (con segundos)
 const schedule = [
+ {
+    startTime: "00:00:03",
+    endTime: "04:00:00",
+    station: {
+      name: "Radio La Unción",
+      url: "https://jml-stream.com:8010/app.aac",
+    },
+    programName: "", // Nombre del programa
+    days: [1, 2, 3, 4, 5, 6, 0], // Lunes a domingo
+  },
   {
     startTime: "04:00:03",
     endTime: "05:56:00",
@@ -236,6 +246,7 @@ const schedule = [
     programName: "El Sembrador", // Asegúrate de que este campo esté presente
     days: [6,0], // sabado y domimgo
   },
+ 
 
   // Sabado
 
