@@ -675,7 +675,7 @@ document.getElementById("scrollToStationsButton").addEventListener("click", () =
   const stationList = document.getElementById("stationList");
   stationList.scrollIntoView({
     behavior: "smooth",
-    block: "center",
+    block: "start",
   });
 });
 
