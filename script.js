@@ -1,7 +1,7 @@
-// Configuración de estaciones y horarios (con segundos)
+// Configuración de estaciones y horarios (con segundos en 00)
 const schedule = [
   {
-    startTime: "00:00:01",
+    startTime: "00:00:00",
     endTime: "04:00:00",
     station: {
       name: "Radio La Unción",
@@ -11,7 +11,7 @@ const schedule = [
     days: [1, 2, 3, 4, 5, 6, 0],
   },
   {
-    startTime: "04:00:01",
+    startTime: "04:00:00",
     endTime: "05:56:00",
     station: {
       name: "Radio Vida",
@@ -21,7 +21,7 @@ const schedule = [
     days: [1, 2, 3, 4, 5, 6, 0],
   },
   {
-    startTime: "05:56:01",
+    startTime: "05:56:00",
     endTime: "06:00:00",
     station: {
       name: "Radio La Unción",
@@ -31,7 +31,7 @@ const schedule = [
     days: [1, 2, 3, 4, 5, 6, 0],
   },
   {
-    startTime: "06:00:01",
+    startTime: "06:00:00",
     endTime: "06:56:00",
     station: {
       name: "Radio Vida",
@@ -41,7 +41,7 @@ const schedule = [
     days: [1, 2, 3, 4, 5, 6, 0],
   },
   {
-    startTime: "06:56:01",
+    startTime: "06:56:00",
     endTime: "07:00:00",
     station: {
       name: "Radio La Unción",
@@ -51,7 +51,7 @@ const schedule = [
     days: [1, 2, 3, 4, 5, 6, 0],
   },
   {
-    startTime: "07:00:01",
+    startTime: "07:00:00",
     endTime: "07:56:00",
     station: {
       name: "Radio Unión Cristiana",
@@ -61,7 +61,7 @@ const schedule = [
     days: [1, 2, 3, 4, 5],
   },
   {
-    startTime: "07:56:01",
+    startTime: "07:56:00",
     endTime: "08:00:00",
     station: {
       name: "Radio La Unción",
@@ -71,7 +71,7 @@ const schedule = [
     days: [1, 2, 3, 4, 5],
   },
   {
-    startTime: "08:00:01",
+    startTime: "08:00:00",
     endTime: "08:56:00",
     station: {
       name: "Radio Nueva Luz",
@@ -81,7 +81,7 @@ const schedule = [
     days: [1, 2, 3, 4, 5],
   },
   {
-    startTime: "08:56:01",
+    startTime: "08:56:00",
     endTime: "09:00:00",
     station: {
       name: "Radio La Unción",
@@ -91,7 +91,7 @@ const schedule = [
     days: [1, 2, 3, 4, 5],
   },
   {
-    startTime: "09:00:01",
+    startTime: "09:00:00",
     endTime: "09:56:00",
     station: {
       name: "Radio Nueva Luz",
@@ -101,7 +101,7 @@ const schedule = [
     days: [1, 2, 3, 4, 5],
   },
   {
-    startTime: "09:56:01",
+    startTime: "09:56:00",
     endTime: "10:00:00",
     station: {
       name: "Radio La Unción",
@@ -111,7 +111,7 @@ const schedule = [
     days: [1, 2, 3, 4, 5],
   },
   {
-    startTime: "10:00:01",
+    startTime: "10:00:00",
     endTime: "10:56:00",
     station: {
       name: "Radio Nueva Luz",
@@ -121,7 +121,7 @@ const schedule = [
     days: [1, 2, 3, 4, 5],
   },
   {
-    startTime: "10:56:01",
+    startTime: "10:56:00",
     endTime: "11:00:00",
     station: {
       name: "Radio La Unción",
@@ -131,7 +131,7 @@ const schedule = [
     days: [1, 2, 3, 4, 5],
   },
   {
-    startTime: "11:00:01",
+    startTime: "11:00:00",
     endTime: "12:00:00",
     station: {
       name: "Radio Nueva Luz",
@@ -141,7 +141,7 @@ const schedule = [
     days: [1, 2, 3, 4, 5],
   },
   {
-    startTime: "12:00:01",
+    startTime: "12:00:00",
     endTime: "13:00:00",
     station: {
       name: "Radio Mas Vida",
@@ -151,7 +151,7 @@ const schedule = [
     days: [1, 2, 3, 4, 5],
   },
   {
-    startTime: "13:00:01",
+    startTime: "13:00:00",
     endTime: "14:00:00",
     station: {
       name: "Radio Vida",
@@ -161,7 +161,7 @@ const schedule = [
     days: [1, 2, 3, 4, 5],
   },
   {
-    startTime: "14:00:01",
+    startTime: "14:00:00",
     endTime: "14:56:00",
     station: {
       name: "Radio Nueva Luz",
@@ -171,7 +171,7 @@ const schedule = [
     days: [1, 2, 3, 4, 5],
   },
   {
-    startTime: "14:56:01",
+    startTime: "14:56:00",
     endTime: "15:00:00",
     station: {
       name: "Radio La Unción",
@@ -181,7 +181,7 @@ const schedule = [
     days: [1, 2, 3, 4, 5],
   },
   {
-    startTime: "15:00:01",
+    startTime: "15:00:00",
     endTime: "16:00:00",
     station: {
       name: "Radio Nueva Luz",
@@ -191,7 +191,7 @@ const schedule = [
     days: [1, 2, 3, 4, 5],
   },
   {
-    startTime: "16:00:01",
+    startTime: "16:00:00",
     endTime: "17:00:00",
     station: {
       name: "Radio Nueva Luz",
@@ -201,7 +201,7 @@ const schedule = [
     days: [1, 2, 3, 4, 5],
   },
   {
-    startTime: "17:00:01",
+    startTime: "17:00:00",
     endTime: "18:00:00",
     station: {
       name: "Radio Vida",
@@ -211,7 +211,7 @@ const schedule = [
     days: [1, 2, 3, 4, 5],
   },
   {
-    startTime: "18:00:01",
+    startTime: "18:00:00",
     endTime: "19:00:00",
     station: {
       name: "Radio Bethel",
@@ -221,7 +221,7 @@ const schedule = [
     days: [1, 2, 3, 4, 5],
   },
   {
-    startTime: "19:00:01",
+    startTime: "19:00:00",
     endTime: "23:59:59",
     station: {
       name: "Radio Mas Vida",
@@ -230,9 +230,8 @@ const schedule = [
     programName: "Programa Final",
     days: [1, 2, 3, 4, 5],
   },
-  // Fin de semana
   {
-    startTime: "07:00:01",
+    startTime: "07:00:00",
     endTime: "08:00:00",
     station: {
       name: "Radio Vida",
@@ -242,7 +241,7 @@ const schedule = [
     days: [6, 0],
   },
   {
-    startTime: "08:00:01",
+    startTime: "08:00:00",
     endTime: "14:00:00",
     station: {
       name: "Radio La Unción",
@@ -252,7 +251,7 @@ const schedule = [
     days: [6],
   },
   {
-    startTime: "14:00:01",
+    startTime: "14:00:00",
     endTime: "15:00:00",
     station: {
       name: "Radio Vida",
@@ -262,7 +261,7 @@ const schedule = [
     days: [6],
   },
   {
-    startTime: "15:00:01",
+    startTime: "15:00:00",
     endTime: "23:59:59",
     station: {
       name: "Radio Mas Vida",
@@ -272,7 +271,7 @@ const schedule = [
     days: [6],
   },
   {
-    startTime: "08:00:01",
+    startTime: "08:00:00",
     endTime: "10:00:00",
     station: {
       name: "Radio Nueva Luz Complemento",
@@ -282,7 +281,7 @@ const schedule = [
     days: [0],
   },
   {
-    startTime: "10:00:01",
+    startTime: "10:00:00",
     endTime: "11:00:00",
     station: {
       name: "Radio Mas Vida",
@@ -292,7 +291,7 @@ const schedule = [
     days: [0],
   },
   {
-    startTime: "11:00:01",
+    startTime: "11:00:00",
     endTime: "13:00:00",
     station: {
       name: "Radio Nueva Luz Complemento",
@@ -302,7 +301,7 @@ const schedule = [
     days: [0],
   },
   {
-    startTime: "13:00:01",
+    startTime: "13:00:00",
     endTime: "23:59:59",
     station: {
       name: "Radio Mas Vida",
@@ -310,7 +309,7 @@ const schedule = [
     },
     programName: "",
     days: [0],
-  },
+  }
 ];
 
 
