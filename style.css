@@ -220,3 +220,10 @@ h1 {
 #currentDayIndicator:active {
   transform: scale(0.95); /* Efecto de clic */
 }
+
+#footerText {
+  text-align: center;
+  padding: 15px;
+  font-size: 14px;
+  color: #333; /* Color del texto */
+}
