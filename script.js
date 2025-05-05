@@ -297,7 +297,7 @@ const schedule = [
       name: "Radio Nueva Luz Complemento",
       url: "https://conectperu.com/8338/stream",
     },
-    programName: "Culto N°1",
+    programName: "Culto N°2",
     days: [0],
   },
   {
@@ -344,7 +344,10 @@ const stations = [
     name: "Radio Nueva Luz Complemento",
     url: "https://conectperu.com/8338/stream",
   },
-
+  {
+    name: "Al Fin Radio",
+    url: "https://stream-176.zeno.fm/bwxzzkkuhchvv?zt=eyJhbGciOiJIUzI1NiJ9.eyJzdHJlYW0iOiJid3h6emtrdWhjaHZ2IiwiaG9zdCI6InN0cmVhbS0xNzYuemVuby5mbSIsInJ0dGwiOjUsImp0aSI6InhzeU1NX3g4UXN5UTc1S3Y3aHpnaFEiLCJpYXQiOjE3NDY0MTU4NTksImV4cCI6MTc0NjQxNTkxOX0.J89a5kpQ0yYFvIYQ6kawcdU__Tz44n0j3sqPLHV4gVI",
+  },
   
 ];
 
