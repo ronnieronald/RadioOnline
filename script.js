@@ -1,336 +1,318 @@
 // Configuración de estaciones y horarios (con segundos)
 const schedule = [
- {
-    startTime: "00:00:03",
+  {
+    startTime: "00:00:01",
     endTime: "04:00:00",
     station: {
       name: "Radio La Unción",
       url: "https://jml-stream.com:8010/app.aac",
     },
-    programName: "", // Nombre del programa
-    days: [1, 2, 3, 4, 5, 6, 0], // Lunes a domingo
+    programName: "",
+    days: [1, 2, 3, 4, 5, 6, 0],
   },
   {
-    startTime: "04:00:03",
+    startTime: "04:00:01",
     endTime: "05:56:00",
     station: {
       name: "Radio Vida",
       url: "https://radio.transmite.pe/9318/stream",
     },
-    programName: "A Solas Con Dios", // Nombre del programa
-    days: [1, 2, 3, 4, 5, 6, 0], // Lunes a domingo
+    programName: "A Solas Con Dios",
+    days: [1, 2, 3, 4, 5, 6, 0],
   },
   {
-    startTime: "05:56:03",
+    startTime: "05:56:01",
     endTime: "06:00:00",
     station: {
       name: "Radio La Unción",
       url: "https://jml-stream.com:8010/app.aac",
     },
-    programName: "", // Nombre del programa
-    days: [1, 2, 3, 4, 5, 6, 0], // Lunes a domingo
+    programName: "",
+    days: [1, 2, 3, 4, 5, 6, 0],
   },
   {
-    startTime: "06:00:03",
+    startTime: "06:00:01",
     endTime: "06:56:00",
     station: {
       name: "Radio Vida",
       url: "https://radio.transmite.pe/9318/stream",
     },
-    programName: "", // Asegúrate de que este campo esté presente
-    days: [1, 2, 3, 4, 5, 6, 0], // Lunes a domingo
+    programName: "",
+    days: [1, 2, 3, 4, 5, 6, 0],
   },
   {
-    startTime: "06:56:03",
+    startTime: "06:56:01",
     endTime: "07:00:00",
     station: {
       name: "Radio La Unción",
       url: "https://jml-stream.com:8010/app.aac",
     },
-    programName: "", // Asegúrate de que este campo esté presente
-    days: [1, 2, 3, 4, 5, 6, 0], // Lunes a domingo
+    programName: "",
+    days: [1, 2, 3, 4, 5, 6, 0],
   },
-  //lunes a viernes
- 
   {
-    startTime: "07:00:03",
+    startTime: "07:00:01",
     endTime: "07:56:00",
     station: {
       name: "Radio Unión Cristiana",
       url: "https://stream-159.zeno.fm/6u0yyg3fwqruv",
     },
-    programName: "Fortaleza Noticias", // Asegúrate de que este campo esté presente
-    days: [1, 2, 3, 4, 5], // Lunes a viernes
+    programName: "Fortaleza Noticias",
+    days: [1, 2, 3, 4, 5],
   },
   {
-    startTime: "07:56:03",
+    startTime: "07:56:01",
     endTime: "08:00:00",
     station: {
       name: "Radio La Unción",
       url: "https://jml-stream.com:8010/app.aac",
     },
-    programName: "", // Asegúrate de que este campo esté presente
-    days: [1, 2, 3, 4, 5], // Lunes a viernes
+    programName: "",
+    days: [1, 2, 3, 4, 5],
   },
   {
-    startTime: "08:00:03",
+    startTime: "08:00:01",
     endTime: "08:56:00",
     station: {
       name: "Radio Nueva Luz",
       url: "https://conectperu.com/8324/stream",
     },
-    programName: "Programa N°1", // Asegúrate de que este campo esté presente
-    days: [1, 2, 3, 4, 5], // Lunes a viernes
+    programName: "Programa N°1",
+    days: [1, 2, 3, 4, 5],
   },
   {
-    startTime: "08:56:03",
+    startTime: "08:56:01",
     endTime: "09:00:00",
     station: {
       name: "Radio La Unción",
       url: "https://jml-stream.com:8010/app.aac",
     },
-    programName: "", // Asegúrate de que este campo esté presente
-    days: [1, 2, 3, 4, 5], // Lunes a viernes
+    programName: "",
+    days: [1, 2, 3, 4, 5],
   },
   {
-    startTime: "09:00:03",
+    startTime: "09:00:01",
     endTime: "09:56:00",
     station: {
       name: "Radio Nueva Luz",
       url: "https://conectperu.com/8324/stream",
     },
-    programName: "Programa N°2", // Asegúrate de que este campo esté presente
-    days: [1, 2, 3, 4, 5], // Lunes a viernes
+    programName: "Programa N°2",
+    days: [1, 2, 3, 4, 5],
   },
   {
-    startTime: "09:56:03",
+    startTime: "09:56:01",
     endTime: "10:00:00",
     station: {
       name: "Radio La Unción",
       url: "https://jml-stream.com:8010/app.aac",
     },
-    programName: "", // Asegúrate de que este campo esté presente
-    days: [1, 2, 3, 4, 5], // Lunes a viernes
+    programName: "",
+    days: [1, 2, 3, 4, 5],
   },
   {
-    startTime: "10:00:03",
+    startTime: "10:00:01",
     endTime: "10:56:00",
     station: {
       name: "Radio Nueva Luz",
       url: "https://conectperu.com/8324/stream",
     },
-    programName: "Programa N°3", // Asegúrate de que este campo esté presente
-    days: [1, 2, 3, 4, 5], // Lunes a viernes
+    programName: "Programa N°3",
+    days: [1, 2, 3, 4, 5],
   },
   {
-    startTime: "10:56:03",
+    startTime: "10:56:01",
     endTime: "11:00:00",
     station: {
       name: "Radio La Unción",
       url: "https://jml-stream.com:8010/app.aac",
     },
-    programName: "", // Asegúrate de que este campo esté presente
-    days: [1, 2, 3, 4, 5], // Lunes a viernes
+    programName: "",
+    days: [1, 2, 3, 4, 5],
   },
   {
-    startTime: "11:00:03",
+    startTime: "11:00:01",
     endTime: "12:00:00",
     station: {
       name: "Radio Nueva Luz",
       url: "https://conectperu.com/8324/stream",
     },
-    programName: "La Voz Celestial", // Asegúrate de que este campo esté presente
-    days: [1, 2, 3, 4, 5], // Lunes a viernes
+    programName: "La Voz Celestial",
+    days: [1, 2, 3, 4, 5],
   },
   {
-    startTime: "12:00:03",
+    startTime: "12:00:01",
     endTime: "13:00:00",
     station: {
       name: "Radio Mas Vida",
       url: "https://masvida.radionline.com.es/listen/m%C3%A1s_vida_rock_and_pop/radio.mp3",
     },
-    programName: "", // Asegúrate de que este campo esté presente
-    days: [1, 2, 3, 4, 5], // Lunes a viernes
+    programName: "",
+    days: [1, 2, 3, 4, 5],
   },
   {
-    startTime: "13:00:03",
+    startTime: "13:00:01",
     endTime: "14:00:00",
     station: {
       name: "Radio Vida",
       url: "https://radio.transmite.pe/9318/stream",
     },
-    programName: "Vida Noticias", // Asegúrate de que este campo esté presente
-    days: [1, 2, 3, 4, 5], // Lunes a viernes
+    programName: "Vida Noticias",
+    days: [1, 2, 3, 4, 5],
   },
   {
-    startTime: "14:00:03",
+    startTime: "14:00:01",
     endTime: "14:56:00",
     station: {
       name: "Radio Nueva Luz",
       url: "https://conectperu.com/8324/stream",
     },
-    programName: "Programa N°5", // Asegúrate de que este campo esté presente
-    days: [1, 2, 3, 4, 5], // Lunes a viernes
+    programName: "Programa N°5",
+    days: [1, 2, 3, 4, 5],
   },
   {
-    startTime: "14:56:03",
+    startTime: "14:56:01",
     endTime: "15:00:00",
     station: {
       name: "Radio La Unción",
       url: "https://jml-stream.com:8010/app.aac",
     },
-    programName: "", // Asegúrate de que este campo esté presente
-    days: [1, 2, 3, 4, 5], // Lunes a viernes
+    programName: "",
+    days: [1, 2, 3, 4, 5],
   },
   {
-    startTime: "15:00:03",
+    startTime: "15:00:01",
     endTime: "16:00:00",
     station: {
       name: "Radio Nueva Luz",
       url: "https://conectperu.com/8324/stream",
     },
-    programName: "Jehova Es Mi Pastor", // Asegúrate de que este campo esté presente
-    days: [1, 2, 3, 4, 5], // Lunes a viernes
+    programName: "Jehova Es Mi Pastor",
+    days: [1, 2, 3, 4, 5],
   },
   {
-    startTime: "16:00:03",
+    startTime: "16:00:01",
     endTime: "17:00:00",
     station: {
       name: "Radio Nueva Luz",
       url: "https://conectperu.com/8324/stream",
     },
-    programName: "Programa N°6", // Asegúrate de que este campo esté presente
-    days: [1, 2, 3, 4, 5], // Lunes a viernes
+    programName: "Programa N°6",
+    days: [1, 2, 3, 4, 5],
   },
   {
-    startTime: "17:00:03",
+    startTime: "17:00:01",
     endTime: "18:00:00",
     station: {
       name: "Radio Vida",
       url: "https://radio.transmite.pe/9318/stream",
     },
-    programName: "Vientos De Vida", // Asegúrate de que este campo esté presente
-    days: [1, 2, 3, 4, 5], // Lunes a viernes
+    programName: "Vientos De Vida",
+    days: [1, 2, 3, 4, 5],
   },
   {
-    startTime: "18:00:03",
+    startTime: "18:00:01",
     endTime: "19:00:00",
     station: {
       name: "Radio Bethel",
       url: "https://alfa.betheltv.tv/radiobethel/1/icecast.audio",
     },
-    programName: "Praise the Lord", // Asegúrate de que este campo esté presente
-    days: [1, 2, 3, 4, 5], // Lunes a viernes
+    programName: "Praise the Lord",
+    days: [1, 2, 3, 4, 5],
   },
   {
-    startTime: "19:00:03",
+    startTime: "19:00:01",
     endTime: "23:59:59",
     station: {
       name: "Radio Mas Vida",
       url: "https://masvida.radionline.com.es/listen/m%C3%A1s_vida_rock_and_pop/radio.mp3",
     },
-    programName: "Programa Final", // Asegúrate de que este campo esté presente
-    days: [1, 2, 3, 4, 5], // Lunes a viernes
+    programName: "Programa Final",
+    days: [1, 2, 3, 4, 5],
   },
- 
-
-
-  // Fin de semana (Sábado y Domingo)
+  // Fin de semana
   {
-    startTime: "07:00:03",
+    startTime: "07:00:01",
     endTime: "08:00:00",
     station: {
       name: "Radio Vida",
       url: "https://radio.transmite.pe/9318/stream",
     },
-    programName: "El Sembrador", // Asegúrate de que este campo esté presente
-    days: [6,0], // sabado y domimgo
+    programName: "El Sembrador",
+    days: [6, 0],
   },
- 
-
-  // Sabado
-
   {
-    startTime: "08:00:03",
+    startTime: "08:00:01",
     endTime: "14:00:00",
     station: {
       name: "Radio La Unción",
       url: "https://jml-stream.com:8010/app.aac",
     },
-    programName: "", // Asegúrate de que este campo esté presente
-    days: [6], // sabado y domimgo
+    programName: "",
+    days: [6],
   },
   {
-    startTime: "14:00:03",
+    startTime: "14:00:01",
     endTime: "15:00:00",
     station: {
       name: "Radio Vida",
       url: "https://radio.transmite.pe/9318/stream",
     },
-    programName: "", // Asegúrate de que este campo esté presente
-    days: [6], // sabado y domimgo
+    programName: "",
+    days: [6],
   },
   {
-    startTime: "15:00:03",
+    startTime: "15:00:01",
     endTime: "23:59:59",
     station: {
       name: "Radio Mas Vida",
       url: "https://masvida.radionline.com.es/listen/m%C3%A1s_vida_rock_and_pop/radio.mp3",
     },
-    programName: "", // Asegúrate de que este campo esté presente
-    days: [6], // sabado y domimgo
+    programName: "",
+    days: [6],
   },
-
-
-  // Domingo
-  
   {
-    startTime: "08:00:03",
+    startTime: "08:00:01",
     endTime: "10:00:00",
     station: {
       name: "Radio Nueva Luz Complemento",
       url: "https://conectperu.com/8338/stream",
     },
-    programName: "Culto N°1", // Asegúrate de que este campo esté presente
-    days: [0], // sabado y domimgo
+    programName: "Culto N°1",
+    days: [0],
   },
   {
-    startTime: "10:00:03",
+    startTime: "10:00:01",
     endTime: "11:00:00",
     station: {
       name: "Radio Mas Vida",
       url: "https://masvida.radionline.com.es/listen/m%C3%A1s_vida_rock_and_pop/radio.mp3",
     },
-    programName: "", // Asegúrate de que este campo esté presente
-    days: [0], // sabado y domimgo
+    programName: "",
+    days: [0],
   },
   {
-    startTime: "11:00:03",
+    startTime: "11:00:01",
     endTime: "13:00:00",
     station: {
       name: "Radio Nueva Luz Complemento",
       url: "https://conectperu.com/8338/stream",
     },
-    programName: "Culto N°1", // Asegúrate de que este campo esté presente
-    days: [0], // sabado y domimgo
+    programName: "Culto N°1",
+    days: [0],
   },
   {
-    startTime: "13:00:03",
+    startTime: "13:00:01",
     endTime: "23:59:59",
     station: {
       name: "Radio Mas Vida",
       url: "https://masvida.radionline.com.es/listen/m%C3%A1s_vida_rock_and_pop/radio.mp3",
     },
-    programName: "", // Asegúrate de que este campo esté presente
-    days: [0], // sabado y domimgo
+    programName: "",
+    days: [0],
   },
-
-
-
-
-
-
 ];
+
 
 const stations = [
   {
