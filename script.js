@@ -114,10 +114,10 @@ const schedule = [
     startTime: "10:00:00",
     endTime: "10:56:00",
     station: {
-      name: "Radio Nueva Luz",
-      url: "https://conectperu.com/8324/stream",
+    name: "Radio DiospySuyana",
+    url: "https://cast2.my-control-panel.com/proxy/diospis1/stream",
     },
-    programName: "Programa N°3",
+    programName: "Tus Mañanas",
     days: [1, 2, 3, 4, 5],
   },
   {
