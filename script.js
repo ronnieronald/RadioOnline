@@ -479,6 +479,12 @@ function checkSchedule() {
 
 // Controlar play/pausa con el botón personalizado
 playPauseButton.addEventListener("click", () => {
+  // Eliminar el mensaje si existe
+  const userMessage = document.getElementById("userMessage");
+  if (userMessage) {
+    userMessage.remove();
+  }
+
   if (radioPlayer.paused) {
     const scheduled = getScheduledStation();
     if (scheduled && !radioPlayer.src) {
@@ -634,9 +640,31 @@ setInterval(() => {
 // Intentar reproducción automática al cargar
 window.addEventListener("load", () => {
   const scheduled = getScheduledStation();
+  const programTitle = document.getElementById("programTitle");
+
+  // Crear el mensaje
+  const userMessage = document.createElement("div");
+  userMessage.id = "userMessage";
+  userMessage.style.color = "red";
+  userMessage.style.textAlign = "center";
+  userMessage.style.marginTop = "10px";
+  userMessage.style.fontSize = "1rem";
+  userMessage.textContent = "La reproducción automática fue bloqueada. Haz clic en el botón de Play/Pause para iniciar.";
+
+  // Insertar el mensaje debajo del título del programa
+  programTitle.insertAdjacentElement("afterend", userMessage);
+
   if (scheduled) {
-    updateProgramTitle(scheduled.station.name, scheduled.endTime);
-    playStation(scheduled.station); // Intentar reproducción automática
+    radioPlayer.src = scheduled.station.url;
+    radioPlayer.play().then(() => {
+      updateProgramTitle(scheduled.station.name, scheduled.endTime);
+      playPauseIcon.src =
+        "https://img.icons8.com/ios-filled/50/000000/pause.png";
+      isPlaying = true;
+      userMessage.remove(); // Eliminar el mensaje si la reproducción automática funciona
+    }).catch(() => {
+      console.log("Reproducción automática bloqueada.");
+    });
   } else {
     updateProgramTitle(null, null);
     playPauseIcon.src =
