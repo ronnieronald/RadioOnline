@@ -447,7 +447,7 @@ function checkSchedule() {
   if (!isManualSelection) {
     const scheduled = getScheduledStation();
     if (scheduled) {
-      if (radioPlayer.src !== scheduled.station.url || !isPlaying) {
+      if (radioPlayer.src !== scheduled.station.url || (!isPlaying && !radioPlayer.paused)) {
         playStation(scheduled.station);
       }
       updateProgramTitle(scheduled.station.name, scheduled.endTime);
