@@ -822,10 +822,8 @@ function updateMediaSession(station, programName = "") {
     navigator.mediaSession.metadata = new window.MediaMetadata({
       title: station.name,
       artist: artistText,
-      album: pageTitle,
-      artwork: [
-        { src: station.logo || 'https://img.icons8.com/ios-filled/100/000000/radio.png', sizes: '512x512', type: 'image/png' }
-      ]
+      album: "",
+      artwork: []
     });
     // Botón pausa
     navigator.mediaSession.setActionHandler('pause', () => {
