@@ -312,9 +312,9 @@ const schedule = [
     startTime: "10:00:00",
     endTime: "11:00:00",
     station: {
-      name: "Radio Mas Vida",
-      url: "https://masvida.radionline.com.es/listen/m%C3%A1s_vida_rock_and_pop/radio.mp3",
-      logo: "https://static.mytuner.mobi/media/tvos_radios/280/mas-vida.8adfb258.jpg",
+      name: "Radio La Unción",
+      url: "https://jml-stream.com:8010/app.aac",
+      logo: "https://play-lh.googleusercontent.com/oMpXPAw08KNsoGYzJoLp6_5Ihpr1ZWnBZR8A0WfPKmaOgspDS4BNvm2XfUy5oBLk7Xk=w240-h480-rw"
     },
     programName: "",
     days: [0],
