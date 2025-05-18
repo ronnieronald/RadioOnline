@@ -312,16 +312,16 @@ const schedule = [
     startTime: "10:00:00",
     endTime: "11:00:00",
     station: {
-      name: "Radio La Unción",
-      url: "https://jml-stream.com:8010/app.aac",
-      logo: "https://play-lh.googleusercontent.com/oMpXPAw08KNsoGYzJoLp6_5Ihpr1ZWnBZR8A0WfPKmaOgspDS4BNvm2XfUy5oBLk7Xk=w240-h480-rw"
-    },
+    name: "Al Fin Radio",
+    url: "https://stream-176.zeno.fm/bwxzzkkuhchvv?zt=eyJhbGciOiJIUzI1NiJ9.eyJzdHJlYW0iOiJid3h6emtrdWhjaHZ2IiwiaG9zdCI6InN0cmVhbS0xNzYuemVuby5mbSIsInJ0dGwiOjUsImp0aSI6InhzeU1NX3g4UXN5UTc1S3Y3aHpnaFEiLCJpYXQiOjE3NDY0MTU4NTksImV4cCI6MTc0NjQxNTkxOX0.J89a5kpQ0yYFvIYQ6kawcdU__Tz44n0j3sqPLHV4gVI",
+    logo: "https://radioscristianasdelmundo.com/sites/default/files/styles/player_image/public/2022-07/al-fin-radio-mexico.png.webp?itok=n1UB7Vpp"
+  },
     programName: "",
     days: [0],
   },
   {
     startTime: "11:00:00",
-    endTime: "13:00:00",
+    endTime: "13:30:00",
     station: {
       name: "Radio Nueva Luz Complemento",
       url: "https://conectperu.com/8338/stream",
@@ -331,14 +331,14 @@ const schedule = [
     days: [0],
   },
   {
-    startTime: "13:00:00",
+    startTime: "13:30:00",
     endTime: "23:59:59",
     station: {
-      name: "Radio Mas Vida",
-      url: "https://masvida.radionline.com.es/listen/m%C3%A1s_vida_rock_and_pop/radio.mp3",
-      logo: "https://static.mytuner.mobi/media/tvos_radios/280/mas-vida.8adfb258.jpg",
-    },
-    programName: "",
+    name: "Al Fin Radio",
+    url: "https://stream-176.zeno.fm/bwxzzkkuhchvv?zt=eyJhbGciOiJIUzI1NiJ9.eyJzdHJlYW0iOiJid3h6emtrdWhjaHZ2IiwiaG9zdCI6InN0cmVhbS0xNzYuemVuby5mbSIsInJ0dGwiOjUsImp0aSI6InhzeU1NX3g4UXN5UTc1S3Y3aHpnaFEiLCJpYXQiOjE3NDY0MTU4NTksImV4cCI6MTc0NjQxNTkxOX0.J89a5kpQ0yYFvIYQ6kawcdU__Tz44n0j3sqPLHV4gVI",
+    logo: "https://radioscristianasdelmundo.com/sites/default/files/styles/player_image/public/2022-07/al-fin-radio-mexico.png.webp?itok=n1UB7Vpp"
+  },
+    programName: "Undefined",
     days: [0],
   }
 ];
