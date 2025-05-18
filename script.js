@@ -321,7 +321,7 @@ const schedule = [
   },
   {
     startTime: "11:00:00",
-    endTime: "13:30:00",
+    endTime: "13:00:00",
     station: {
       name: "Radio Nueva Luz Complemento",
       url: "https://conectperu.com/8338/stream",
@@ -331,7 +331,7 @@ const schedule = [
     days: [0],
   },
   {
-    startTime: "13:30:00",
+    startTime: "13:00:00",
     endTime: "23:59:59",
     station: {
     name: "Al Fin Radio",
