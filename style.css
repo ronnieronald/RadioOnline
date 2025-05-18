@@ -227,3 +227,13 @@ h1 {
   font-size: 14px;
   color: #333; /* Color del texto */
 }
+
+.spin {
+  animation: spin 1s linear infinite;
+}
+#preloaderSpinner {
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
