@@ -246,11 +246,11 @@ const schedule = [
     startTime: "18:00:00",
     endTime: "19:00:00",
     station: {
-      name: "Radio Bethel",
-      url: "https://alfa.betheltv.tv/radiobethel/1/icecast.audio",
-      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTORXa6Ro8Wijw3ygMTJimv4iCPpmSfouqeg&s"
+      name: "Radio DiospySuyana",
+      url: "https://cast2.my-control-panel.com/proxy/diospis1/stream",
+      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuWVXzuwMydagta3lPYQH2qI6JUleJHpwcnw&s"
     },
-    programName: "Praise the Lord",
+    programName: "Encuentro Latinoamericano",
     days: [1, 2, 3, 4, 5],
   },
   {
