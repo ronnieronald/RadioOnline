@@ -46,7 +46,7 @@ const schedule = [
   },
   {
     startTime: "06:56:00",
-    endTime: "07:00:00",
+    endTime: "07:05:00",
     station:  {
       name: "Radio La Unción",
       url: "https://jml-stream.com:8010/app.aac",
@@ -56,7 +56,7 @@ const schedule = [
     days: [1, 2, 3, 4, 5, 6, 0],
   },
   {
-    startTime: "07:00:00",
+    startTime: "07:05:00",
     endTime: "07:56:00",
     station: {
       name: "Radio Unión Cristiana",
