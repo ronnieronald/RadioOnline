@@ -251,7 +251,18 @@ const schedule = [
       logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuWVXzuwMydagta3lPYQH2qI6JUleJHpwcnw&s"
     },
     programName: "Encuentro Latinoamericano",
-    days: [1, 2, 3, 4, 5],
+    days: [1, 3],
+  },
+ {
+    startTime: "18:00:00",
+    endTime: "19:00:00",
+    station:  {
+      name: "Radio Bethel",
+      url: "https://alfa.betheltv.tv/radiobethel/1/icecast.audio",
+      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTORXa6Ro8Wijw3ygMTJimv4iCPpmSfouqeg&s"
+    },
+    programName: "Praise The Lord",
+    days: [2, 4, 5],
   },
   {
     startTime: "19:00:00",
