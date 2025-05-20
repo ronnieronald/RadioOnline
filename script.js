@@ -56,7 +56,7 @@ const schedule = [
     days: [1, 2, 3, 4, 5, 6, 0],
   },
   {
-    startTime: "07:05:00",
+    startTime: "07:06:00",
     endTime: "07:56:00",
     station: {
       name: "Radio Unión Cristiana",
