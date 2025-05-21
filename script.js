@@ -335,9 +335,9 @@ const schedule = [
     startTime: "18:00:00",
     endTime: "19:00:00",
     station: {
-      name: "Radio Vida",
-      url: "https://radio.transmite.pe/9318/stream",
-       logo: "/assets/RadioVida.jpg"
+      name: "Radio DiospySuyana",
+      url: "https://cast2.my-control-panel.com/proxy/diospis1/stream",
+      logo: "/assets/RadioDiospysuyana.jpg"
     },
     programName: "Encuentro Latinoamericano",
     days: [1, 3],
