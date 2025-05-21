@@ -172,7 +172,7 @@ const schedule = [
     station: {
       name: "Radio DiospySuyana",
       url: "https://cast2.my-control-panel.com/proxy/diospis1/stream",
-      logo: "/assets/RadioDiospySuyana.jpg"
+      logo: "/assets/RadioDiospysuyana.jpg"
     },
     programName: "Tus Mañanas",
     days: [1, 2, 3, 4, 5],
