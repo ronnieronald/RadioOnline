@@ -1,4 +1,9 @@
-// Configuración de estaciones y horarios (con segundos en 00)
+// Configuración de estaciones y horarios
+
+
+//✨Lunes✨Martes✨Miércoles✨Jueves✨Viernes✨
+
+
 const schedule = [
   {
     startTime: "00:00:00",
@@ -6,365 +11,517 @@ const schedule = [
     station: {
       name: "Radio La Unción",
       url: "https://jml-stream.com:8010/app.aac",
-      logo: "https://play-lh.googleusercontent.com/oMpXPAw08KNsoGYzJoLp6_5Ihpr1ZWnBZR8A0WfPKmaOgspDS4BNvm2XfUy5oBLk7Xk=w240-h480-rw"
+      logo: "/assets/RadioLaUncion.jpg"
     },
     programName: "Hora Cero con Jesús",
     days: [1, 2, 3, 4, 5, 6, 0],
   },
+
+
+
   {
     startTime: "04:00:00",
     endTime: "05:56:00",
     station: {
       name: "Radio Vida",
       url: "https://radio.transmite.pe/9318/stream",
-       logo: "https://radiovidacusco.com/live.player/radiovidaenvivo/widgets/player/single/images/LOGORADIO.jpg"
+       logo: "/assets/RadioVida.jpg"
     },
     programName: "A Solas Con Dios",
     days: [1, 2, 3, 4, 5, 6, 0],
   },
+
+
+
   {
     startTime: "05:56:00",
     endTime: "06:00:00",
-    station:  {
+    station: {
       name: "Radio La Unción",
       url: "https://jml-stream.com:8010/app.aac",
-      logo: "https://play-lh.googleusercontent.com/oMpXPAw08KNsoGYzJoLp6_5Ihpr1ZWnBZR8A0WfPKmaOgspDS4BNvm2XfUy5oBLk7Xk=w240-h480-rw"
+      logo: "/assets/RadioLaUncion.jpg"
     },
     programName: "Break Music",
     days: [1, 2, 3, 4, 5, 6, 0],
   },
+
+
+
   {
     startTime: "06:00:00",
     endTime: "06:56:00",
     station: {
       name: "Radio Vida",
       url: "https://radio.transmite.pe/9318/stream",
-       logo: "https://radiovidacusco.com/live.player/radiovidaenvivo/widgets/player/single/images/LOGORADIO.jpg"
+       logo: "/assets/RadioVida.jpg"
     },
     programName: "Programa N°2",
     days: [1, 2, 3, 4, 5, 6, 0],
   },
+
+
+
   {
     startTime: "06:56:00",
     endTime: "07:05:00",
-    station:  {
+    station: {
       name: "Radio La Unción",
       url: "https://jml-stream.com:8010/app.aac",
-      logo: "https://play-lh.googleusercontent.com/oMpXPAw08KNsoGYzJoLp6_5Ihpr1ZWnBZR8A0WfPKmaOgspDS4BNvm2XfUy5oBLk7Xk=w240-h480-rw"
+      logo: "/assets/RadioLaUncion.jpg"
     },
     programName: "Break Music",
     days: [1, 2, 3, 4, 5, 6, 0],
   },
+
+
+
+
   {
     startTime: "07:06:00",
     endTime: "07:56:00",
     station: {
       name: "Radio Unión Cristiana",
       url: "https://stream-159.zeno.fm/6u0yyg3fwqruv",
-      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNk6p8qmpR7lpnr6VeB4V_oFTMK-E7GlnJuQ&s"
+      logo: "/assets/RadioUnionCristiana.jpg"
     },
     programName: "Fortaleza Noticias",
     days: [1, 2, 3, 4, 5],
   },
+
+
+
+
   {
     startTime: "07:56:00",
     endTime: "08:03:00",
-    station:  {
+    station: {
       name: "Radio La Unción",
       url: "https://jml-stream.com:8010/app.aac",
-      logo: "https://play-lh.googleusercontent.com/oMpXPAw08KNsoGYzJoLp6_5Ihpr1ZWnBZR8A0WfPKmaOgspDS4BNvm2XfUy5oBLk7Xk=w240-h480-rw"
+      logo: "/assets/RadioLaUncion.jpg"
     },
     programName: "Break Music",
     days: [1, 2, 3, 4, 5],
   },
+
+
+
+
   {
     startTime: "08:03:00",
     endTime: "08:56:00",
-    station: {
+    station:  {
       name: "Radio Nueva Luz",
       url: "https://conectperu.com/8324/stream",
-      logo: "https://cdn-profiles.tunein.com/s291831/images/logod.jpg?t=638518809420000000"
+      logo: "/assets/RadioNuevaLuz.jpg"
     },
     programName: "Programa N°4",
     days: [1, 2, 3, 4, 5],
   },
+
+
+
+
   {
     startTime: "08:56:00",
     endTime: "09:00:00",
-    station: {
+    station:{
       name: "Radio La Unción",
       url: "https://jml-stream.com:8010/app.aac",
-      logo: "https://play-lh.googleusercontent.com/oMpXPAw08KNsoGYzJoLp6_5Ihpr1ZWnBZR8A0WfPKmaOgspDS4BNvm2XfUy5oBLk7Xk=w240-h480-rw"
+      logo: "/assets/RadioLaUncion.jpg"
     },
     programName: "Break Music",
     days: [1, 2, 3, 4, 5],
   },
+
+
+
+
   {
     startTime: "09:00:00",
     endTime: "09:56:00",
-    station: {
+    station:  {
       name: "Radio Nueva Luz",
       url: "https://conectperu.com/8324/stream",
-      logo: "https://cdn-profiles.tunein.com/s291831/images/logod.jpg?t=638518809420000000"
+      logo: "/assets/RadioNuevaLuz.jpg"
     },
     programName: "Programa N°5",
     days: [1, 2, 3, 4, 5],
   },
+
+
+
+
   {
     startTime: "09:56:00",
     endTime: "10:00:00",
     station:  {
       name: "Radio La Unción",
       url: "https://jml-stream.com:8010/app.aac",
-      logo: "https://play-lh.googleusercontent.com/oMpXPAw08KNsoGYzJoLp6_5Ihpr1ZWnBZR8A0WfPKmaOgspDS4BNvm2XfUy5oBLk7Xk=w240-h480-rw"
+      logo: "/assets/RadioLaUncion.jpg"
     },
     programName: "Break Music",
     days: [1, 2, 3, 4, 5],
   },
+
+
+
+
   {
     startTime: "10:00:00",
     endTime: "10:56:00",
     station: {
       name: "Radio DiospySuyana",
       url: "https://cast2.my-control-panel.com/proxy/diospis1/stream",
-      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuWVXzuwMydagta3lPYQH2qI6JUleJHpwcnw&s"
+      logo: "/assets/RadioDiospySuyana.jpg"
     },
     programName: "Tus Mañanas",
     days: [1, 2, 3, 4, 5],
   },
+
+
+
+
   {
     startTime: "10:56:00",
     endTime: "11:00:00",
-    station:  {
+    station: {
       name: "Radio La Unción",
       url: "https://jml-stream.com:8010/app.aac",
-      logo: "https://play-lh.googleusercontent.com/oMpXPAw08KNsoGYzJoLp6_5Ihpr1ZWnBZR8A0WfPKmaOgspDS4BNvm2XfUy5oBLk7Xk=w240-h480-rw"
+      logo: "/assets/RadioLaUncion.jpg"
     },
     programName: "Break Music",
     days: [1, 2, 3, 4, 5],
   },
+
+
+
+
   {
     startTime: "11:00:00",
     endTime: "12:00:00",
-    station:  {
+    station:   {
       name: "Radio Nueva Luz",
       url: "https://conectperu.com/8324/stream",
-      logo: "https://cdn-profiles.tunein.com/s291831/images/logod.jpg?t=638518809420000000"
+      logo: "/assets/RadioNuevaLuz.jpg"
     },
     programName: "La Voz Celestial",
     days: [1, 2, 3, 4, 5],
   },
+
+
+
+
   {
     startTime: "12:00:00",
     endTime: "13:00:00",
-    station: {
+    station:  {
     name: "Al Fin Radio",
     url: "https://stream-176.zeno.fm/bwxzzkkuhchvv?zt=eyJhbGciOiJIUzI1NiJ9.eyJzdHJlYW0iOiJid3h6emtrdWhjaHZ2IiwiaG9zdCI6InN0cmVhbS0xNzYuemVuby5mbSIsInJ0dGwiOjUsImp0aSI6InhzeU1NX3g4UXN5UTc1S3Y3aHpnaFEiLCJpYXQiOjE3NDY0MTU4NTksImV4cCI6MTc0NjQxNTkxOX0.J89a5kpQ0yYFvIYQ6kawcdU__Tz44n0j3sqPLHV4gVI",
-    logo: "https://radioscristianasdelmundo.com/sites/default/files/styles/player_image/public/2022-07/al-fin-radio-mexico.png.webp?itok=n1UB7Vpp"
+    logo: "/assets/RadioAlFin.jpg"
   },
     programName: "Sing to the Lord",
     days: [1, 2, 3, 4, 5],
   },
+
+
+
+
   {
     startTime: "13:00:00",
     endTime: "14:00:00",
-    station:  {
+    station: {
       name: "Radio Vida",
       url: "https://radio.transmite.pe/9318/stream",
-       logo: "https://radiovidacusco.com/live.player/radiovidaenvivo/widgets/player/single/images/LOGORADIO.jpg"
+       logo: "/assets/RadioVida.jpg"
     },
     programName: "Vida Noticias",
     days: [1, 2, 3, 4, 5],
   },
+
+
+
+
   {
     startTime: "14:00:00",
     endTime: "14:56:00",
-    station:  {
+    station:   {
       name: "Radio Nueva Luz",
       url: "https://conectperu.com/8324/stream",
-      logo: "https://cdn-profiles.tunein.com/s291831/images/logod.jpg?t=638518809420000000"
+      logo: "/assets/RadioNuevaLuz.jpg"
     },
     programName: "Programa N°10",
     days: [1, 2, 3, 4, 5],
   },
+
+
+
+
   {
     startTime: "14:56:00",
     endTime: "15:00:00",
     station:  {
       name: "Radio La Unción",
       url: "https://jml-stream.com:8010/app.aac",
-      logo: "https://play-lh.googleusercontent.com/oMpXPAw08KNsoGYzJoLp6_5Ihpr1ZWnBZR8A0WfPKmaOgspDS4BNvm2XfUy5oBLk7Xk=w240-h480-rw"
+      logo: "/assets/RadioLaUncion.jpg"
     },
     programName: "Break Music",
     days: [1, 2, 3, 4, 5],
   },
+
+
+
+
   {
     startTime: "15:00:00",
     endTime: "15:56:00",
-    station:  {
+    station:   {
       name: "Radio Nueva Luz",
       url: "https://conectperu.com/8324/stream",
-      logo: "https://cdn-profiles.tunein.com/s291831/images/logod.jpg?t=638518809420000000"
+      logo: "/assets/RadioNuevaLuz.jpg"
     },
     programName: "Jehova Es Mi Pastor",
     days: [1, 2, 3, 4, 5],
   },
+
+
+
+
   {
     startTime: "15:56:00",
     endTime: "16:00:00",
     station:  {
       name: "Radio La Unción",
       url: "https://jml-stream.com:8010/app.aac",
-      logo: "https://play-lh.googleusercontent.com/oMpXPAw08KNsoGYzJoLp6_5Ihpr1ZWnBZR8A0WfPKmaOgspDS4BNvm2XfUy5oBLk7Xk=w240-h480-rw"
+      logo: "/assets/RadioLaUncion.jpg"
     },
     programName: "Break Music",
     days: [1, 2, 3, 4, 5],
   },
+
+
+
+
   {
     startTime: "16:00:00",
     endTime: "17:00:00",
-    station:  {
+    station:   {
       name: "Radio Nueva Luz",
       url: "https://conectperu.com/8324/stream",
-      logo: "https://cdn-profiles.tunein.com/s291831/images/logod.jpg?t=638518809420000000"
+      logo: "/assets/RadioNuevaLuz.jpg"
     },
     programName: "Programa N°12",
     days: [1, 2, 3, 4, 5],
   },
+
+
+
+
   {
     startTime: "17:00:00",
     endTime: "18:00:00",
     station:  {
       name: "Radio Vida",
       url: "https://radio.transmite.pe/9318/stream",
-       logo: "https://radiovidacusco.com/live.player/radiovidaenvivo/widgets/player/single/images/LOGORADIO.jpg"
+       logo: "/assets/RadioVida.jpg"
     },
     programName: "Vientos De Vida",
     days: [1, 2, 3, 4, 5],
   },
+
+
+
+
   {
     startTime: "18:00:00",
     endTime: "19:00:00",
     station: {
-      name: "Radio DiospySuyana",
-      url: "https://cast2.my-control-panel.com/proxy/diospis1/stream",
-      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuWVXzuwMydagta3lPYQH2qI6JUleJHpwcnw&s"
+      name: "Radio Vida",
+      url: "https://radio.transmite.pe/9318/stream",
+       logo: "/assets/RadioVida.jpg"
     },
     programName: "Encuentro Latinoamericano",
     days: [1, 3],
   },
- {
+
+
+
+
+  {
     startTime: "18:00:00",
     endTime: "19:00:00",
-    station:  {
+    station:   {
       name: "Radio Bethel",
       url: "https://alfa.betheltv.tv/radiobethel/1/icecast.audio",
-      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTORXa6Ro8Wijw3ygMTJimv4iCPpmSfouqeg&s"
+      logo: "/assets/RadioBethel.jpg"
     },
     programName: "Praise The Lord",
     days: [2, 4, 5],
   },
+
+
+
+
   {
     startTime: "19:00:00",
     endTime: "23:59:59",
-    station: {
+    station:  {
     name: "Al Fin Radio",
     url: "https://stream-176.zeno.fm/bwxzzkkuhchvv?zt=eyJhbGciOiJIUzI1NiJ9.eyJzdHJlYW0iOiJid3h6emtrdWhjaHZ2IiwiaG9zdCI6InN0cmVhbS0xNzYuemVuby5mbSIsInJ0dGwiOjUsImp0aSI6InhzeU1NX3g4UXN5UTc1S3Y3aHpnaFEiLCJpYXQiOjE3NDY0MTU4NTksImV4cCI6MTc0NjQxNTkxOX0.J89a5kpQ0yYFvIYQ6kawcdU__Tz44n0j3sqPLHV4gVI",
-    logo: "https://radioscristianasdelmundo.com/sites/default/files/styles/player_image/public/2022-07/al-fin-radio-mexico.png.webp?itok=n1UB7Vpp"
+    logo: "/assets/RadioAlFin.jpg"
   },
     programName: "Programa Final",
     days: [1, 2, 3, 4, 5],
   },
-  //sabado
+
+
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+  //Fin de Semana - ✨Sabado✨
+
+
+
+
+
   {
     startTime: "07:00:00",
     endTime: "08:00:00",
-    station:  {
+    station: {
       name: "Radio Vida",
       url: "https://radio.transmite.pe/9318/stream",
-       logo: "https://radiovidacusco.com/live.player/radiovidaenvivo/widgets/player/single/images/LOGORADIO.jpg"
+       logo: "/assets/RadioVida.jpg"
     },
     programName: "El Sembrador",
     days: [6, 0],
   },
+
+
+
+
   {
     startTime: "08:00:00",
     endTime: "14:00:00",
     station:  {
       name: "Radio La Unción",
       url: "https://jml-stream.com:8010/app.aac",
-      logo: "https://play-lh.googleusercontent.com/oMpXPAw08KNsoGYzJoLp6_5Ihpr1ZWnBZR8A0WfPKmaOgspDS4BNvm2XfUy5oBLk7Xk=w240-h480-rw"
+      logo: "/assets/RadioLaUncion.jpg"
     },
     programName: "Break con Dios",
     days: [6],
   },
+
+
+
+
   {
     startTime: "14:00:00",
     endTime: "15:00:00",
     station:  {
       name: "Radio Vida",
       url: "https://radio.transmite.pe/9318/stream",
-       logo: "https://radiovidacusco.com/live.player/radiovidaenvivo/widgets/player/single/images/LOGORADIO.jpg"
+       logo: "/assets/RadioVida.jpg"
     },
     programName: "Undefined",
     days: [6],
   },
+
+
+
+
   {
     startTime: "15:00:00",
     endTime: "23:59:59",
-    station:  {
+    station:   {
     name: "Al Fin Radio",
     url: "https://stream-176.zeno.fm/bwxzzkkuhchvv?zt=eyJhbGciOiJIUzI1NiJ9.eyJzdHJlYW0iOiJid3h6emtrdWhjaHZ2IiwiaG9zdCI6InN0cmVhbS0xNzYuemVuby5mbSIsInJ0dGwiOjUsImp0aSI6InhzeU1NX3g4UXN5UTc1S3Y3aHpnaFEiLCJpYXQiOjE3NDY0MTU4NTksImV4cCI6MTc0NjQxNTkxOX0.J89a5kpQ0yYFvIYQ6kawcdU__Tz44n0j3sqPLHV4gVI",
-    logo: "https://radioscristianasdelmundo.com/sites/default/files/styles/player_image/public/2022-07/al-fin-radio-mexico.png.webp?itok=n1UB7Vpp"
+    logo: "/assets/RadioAlFin.jpg"
   },
     programName: "Programa Final",
     days: [6],
   },
-  //domingo
+
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+  //Fin de Semana - ✨Domingo✨
+
+
+
+
   {
     startTime: "08:00:00",
     endTime: "10:30:00",
-    station: {
+    station:  {
       name: "Radio Nueva Luz Complemento",
       url: "https://conectperu.com/8338/stream",
-      logo: "https://cdn-profiles.tunein.com/s291831/images/logod.jpg?t=638518809420000000"
+      logo: "/assets/RadioNuevaLuz.jpg"
     },
     programName: "Culto N°1",
     days: [0],
   },
+
+
+
+
   {
     startTime: "10:30:00",
     endTime: "11:00:00",
-    station: {
+    station:  {
     name: "Al Fin Radio",
     url: "https://stream-176.zeno.fm/bwxzzkkuhchvv?zt=eyJhbGciOiJIUzI1NiJ9.eyJzdHJlYW0iOiJid3h6emtrdWhjaHZ2IiwiaG9zdCI6InN0cmVhbS0xNzYuemVuby5mbSIsInJ0dGwiOjUsImp0aSI6InhzeU1NX3g4UXN5UTc1S3Y3aHpnaFEiLCJpYXQiOjE3NDY0MTU4NTksImV4cCI6MTc0NjQxNTkxOX0.J89a5kpQ0yYFvIYQ6kawcdU__Tz44n0j3sqPLHV4gVI",
-    logo: "https://radioscristianasdelmundo.com/sites/default/files/styles/player_image/public/2022-07/al-fin-radio-mexico.png.webp?itok=n1UB7Vpp"
+    logo: "/assets/RadioAlFin.jpg"
   },
     programName: "Break Music",
     days: [0],
   },
+
+
+
+
   {
     startTime: "11:00:00",
     endTime: "13:00:00",
-    station: {
+    station:  {
       name: "Radio Nueva Luz Complemento",
       url: "https://conectperu.com/8338/stream",
-      logo: "https://cdn-profiles.tunein.com/s291831/images/logod.jpg?t=638518809420000000"
+      logo: "/assets/RadioNuevaLuz.jpg"
     },
     programName: "Culto N°2",
     days: [0],
   },
+
+
+
+
   {
     startTime: "13:00:00",
     endTime: "23:59:59",
-    station: {
+    station:  {
     name: "Al Fin Radio",
     url: "https://stream-176.zeno.fm/bwxzzkkuhchvv?zt=eyJhbGciOiJIUzI1NiJ9.eyJzdHJlYW0iOiJid3h6emtrdWhjaHZ2IiwiaG9zdCI6InN0cmVhbS0xNzYuemVuby5mbSIsInJ0dGwiOjUsImp0aSI6InhzeU1NX3g4UXN5UTc1S3Y3aHpnaFEiLCJpYXQiOjE3NDY0MTU4NTksImV4cCI6MTc0NjQxNTkxOX0.J89a5kpQ0yYFvIYQ6kawcdU__Tz44n0j3sqPLHV4gVI",
-    logo: "https://radioscristianasdelmundo.com/sites/default/files/styles/player_image/public/2022-07/al-fin-radio-mexico.png.webp?itok=n1UB7Vpp"
+    logo: "/assets/RadioAlFin.jpg"
   },
     programName: "Undefined",
     days: [0],
   }
+
+
+
+
 ];
 
 
@@ -373,45 +530,49 @@ const stations = [
   {
       name: "Radio Vida",
       url: "https://radio.transmite.pe/9318/stream",
-       logo: "/assets/radiovida.jpg"
+       logo: "/assets/RadioVida.jpg"
     },
   {
       name: "Radio Nueva Luz",
       url: "https://conectperu.com/8324/stream",
-      logo: "https://cdn-profiles.tunein.com/s291831/images/logod.jpg?t=638518809420000000"
+      logo: "/assets/RadioNuevaLuz.jpg"
     },
  {
       name: "Radio Bethel",
       url: "https://alfa.betheltv.tv/radiobethel/1/icecast.audio",
-      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTORXa6Ro8Wijw3ygMTJimv4iCPpmSfouqeg&s"
+      logo: "/assets/RadioBethel.jpg"
     },
   {
       name: "Radio Unión Cristiana",
       url: "https://stream-159.zeno.fm/6u0yyg3fwqruv",
-      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNk6p8qmpR7lpnr6VeB4V_oFTMK-E7GlnJuQ&s"
+      logo: "/assets/RadioUnionCristiana.jpg"
     },
   {
       name: "Radio La Unción",
       url: "https://jml-stream.com:8010/app.aac",
-      logo: "https://play-lh.googleusercontent.com/oMpXPAw08KNsoGYzJoLp6_5Ihpr1ZWnBZR8A0WfPKmaOgspDS4BNvm2XfUy5oBLk7Xk=w240-h480-rw"
+      logo: "/assets/RadioLaUncion.jpg"
     },
   {
       name: "Radio DiospySuyana",
       url: "https://cast2.my-control-panel.com/proxy/diospis1/stream",
-      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuWVXzuwMydagta3lPYQH2qI6JUleJHpwcnw&s"
+      logo: "/assets/RadioDiospySuyana.jpg"
     },
  {
       name: "Radio Nueva Luz Complemento",
       url: "https://conectperu.com/8338/stream",
-      logo: "https://cdn-profiles.tunein.com/s291831/images/logod.jpg?t=638518809420000000"
+      logo: "/assets/RadioNuevaLuz.jpg"
     },
    {
     name: "Al Fin Radio",
     url: "https://stream-176.zeno.fm/bwxzzkkuhchvv?zt=eyJhbGciOiJIUzI1NiJ9.eyJzdHJlYW0iOiJid3h6emtrdWhjaHZ2IiwiaG9zdCI6InN0cmVhbS0xNzYuemVuby5mbSIsInJ0dGwiOjUsImp0aSI6InhzeU1NX3g4UXN5UTc1S3Y3aHpnaFEiLCJpYXQiOjE3NDY0MTU4NTksImV4cCI6MTc0NjQxNTkxOX0.J89a5kpQ0yYFvIYQ6kawcdU__Tz44n0j3sqPLHV4gVI",
-    logo: "https://radioscristianasdelmundo.com/sites/default/files/styles/player_image/public/2022-07/al-fin-radio-mexico.png.webp?itok=n1UB7Vpp"
+    logo: "/assets/RadioAlFin.jpg"
   },
   
 ];
+
+
+
+
 
 const radioPlayer = document.getElementById("radioPlayer");
 const playPauseButton = document.getElementById("playPauseButton");
@@ -421,6 +582,10 @@ const programTitle = document.getElementById("programTitle");
 const endTimeSpan = document.getElementById("endTime");
 let isManualSelection = false;
 let isPlaying = false;
+
+
+
+
 
 // Renderizar lista de estaciones
 function renderStationList() {
@@ -440,6 +605,10 @@ function renderStationList() {
   });
 }
 
+
+
+
+
 // Actualizar la UI de la lista de estaciones
 function updateStationListUI(activeUrl) {
   Array.from(stationList.children).forEach((li) => {
@@ -448,11 +617,19 @@ function updateStationListUI(activeUrl) {
   });
 }
 
+
+
+
+
 // Convertir hora en formato HH:mm:ss a segundos desde medianoche
 function timeToSeconds(time) {
   const [hours, minutes, seconds] = time.split(":").map(Number);
   return hours * 3600 + minutes * 60 + seconds;
 }
+
+
+
+
 
 // Actualizar el título y hora de finalización
 function updateProgramTitle(stationName, endTime) {
@@ -465,6 +642,10 @@ function updateProgramTitle(stationName, endTime) {
     endTimeSpan.textContent = "";
   }
 }
+
+
+
+
 
 // Reproducir una estación
 function playStation(station) {
@@ -488,6 +669,10 @@ function playStation(station) {
   updateMediaSession(station); // Actualizar la sesión de medios
 }
 
+
+
+
+
 // Obtener la estación programada según la hora actual
 function getScheduledStation() {
   const now = new Date();
@@ -505,6 +690,10 @@ function getScheduledStation() {
     );
   });
 }
+
+
+
+
 
 // Verificar y actualizar la estación según el horario
 function checkSchedule() {
@@ -549,6 +738,10 @@ function checkSchedule() {
   });
 }
 
+
+
+
+
 // Controlar play/pausa con el botón personalizado
 playPauseButton.addEventListener("click", () => {
   // Eliminar el mensaje si existe
@@ -576,7 +769,13 @@ playPauseButton.addEventListener("click", () => {
   }
 });
 
+
+
+
+
 // Actualizar ícono cuando el audio se pausa o reproduce
+radioPlayer.addEventListener("error", tryReconnect);
+radioPlayer.addEventListener("stalled", tryReconnect); // opcional, por si el buffer se queda vacío
 radioPlayer.addEventListener("play", () => {
   playPauseIcon.src =
     "https://img.icons8.com/ios-filled/50/000000/pause.png";
@@ -587,6 +786,10 @@ radioPlayer.addEventListener("pause", () => {
     "https://img.icons8.com/ios-filled/50/000000/play.png";
   isPlaying = false;
 });
+
+
+
+
 
 function updateNextEvent() {
   const now = new Date();
@@ -621,10 +824,22 @@ function updateNextEvent() {
   }
 }
 
+
+
+
+
+
+
+
+
 function updateModeIndicator() {
   const modeIndicator = document.getElementById("modeIndicator");
   modeIndicator.textContent = `Modo: ${isManualSelection ? "Manual" : "Automático"}`;
 }
+
+
+
+
 
 function renderTodaySchedule() {
   const now = new Date();
@@ -674,6 +889,16 @@ function renderTodaySchedule() {
   }
 }
 
+
+
+
+
+
+
+
+
+
+
 function updateCurrentDayIndicator() {
   const now = new Date();
   const daysOfWeek = [
@@ -699,15 +924,37 @@ function updateCurrentDayIndicator() {
   */
 }
 
+
+
+
+
+
+
+
+
+
+
 // Inicializar
 renderStationList();
 checkSchedule();
+
+
+
+
+
 
 // Verificar el horario cada segundo para transiciones instantáneas
 setInterval(() => {
   checkSchedule();
   renderTodaySchedule(); // Actualizar la programación dinámicamente
 }, 1000);
+
+
+
+
+
+
+
 
 // Intentar reproducción automática al cargar
 window.addEventListener("load", () => {
@@ -741,12 +988,28 @@ window.addEventListener("load", () => {
   updateCurrentDayIndicator();
 });
 
+
+
+
+
+
+
+
+
+
 document.getElementById("scrollToTopButton").addEventListener("click", () => {
   window.scrollTo({
     top: 0,
     behavior: "smooth", // Desplazamiento suave
   });
 });
+
+
+
+
+
+
+
 
 document.getElementById("shuffleButton").addEventListener("click", () => {
   const stationsList = document.querySelectorAll("#stationList li");
@@ -771,6 +1034,16 @@ document.getElementById("shuffleButton").addEventListener("click", () => {
   }
 });
 
+
+
+
+
+
+
+
+
+
+
 document.getElementById("scrollToStationsButton").addEventListener("click", () => {
   const stationList = document.getElementById("stationList");
   stationList.scrollIntoView({
@@ -779,6 +1052,15 @@ document.getElementById("scrollToStationsButton").addEventListener("click", () =
   });
 });
 
+
+
+
+
+
+
+
+
+
 document.getElementById("currentDayIndicator").addEventListener("click", () => {
   const scheduleContainer = document.getElementById("scheduleContainer");
   scheduleContainer.scrollIntoView({
@@ -786,6 +1068,15 @@ document.getElementById("currentDayIndicator").addEventListener("click", () => {
     block: "start", // Alinear al inicio del contenedor
   });
 });
+
+
+
+
+
+
+
+
+
 
 document.getElementById("currentDayIndicator").addEventListener("keydown", (event) => {
   if (event.key === "Enter" || event.key === " ") {
@@ -797,6 +1088,15 @@ document.getElementById("currentDayIndicator").addEventListener("keydown", (even
   }
 });
 
+
+
+
+
+
+
+
+
+
 // Detectar pérdida y reconexión de red
 window.addEventListener("offline", () => {
   console.log("Conexión a la red perdida. Pausando reproducción.");
@@ -804,6 +1104,15 @@ window.addEventListener("offline", () => {
   playPauseIcon.src = "https://img.icons8.com/ios-filled/50/000000/play.png";
   isPlaying = false;
 });
+
+
+
+
+
+
+
+
+
 
 window.addEventListener("online", () => {
   console.log("Conexión a la red restablecida. Intentando reanudar reproducción.");
@@ -819,6 +1128,15 @@ window.addEventListener("online", () => {
     });
   }
 });
+
+
+
+
+
+
+
+
+
 
 function updateMediaSession(station, programName = "") {
   if ('mediaSession' in navigator && station) {
@@ -856,10 +1174,29 @@ function updateMediaSession(station, programName = "") {
   }
 }
 
+
+
+
+
+
+
+
+
+
 function hidePreloader() {
   const preloader = document.getElementById("preloader");
   if (preloader) preloader.style.display = "none";
 }
+
+
+
+
+
+
+
+
+
+
 
 // Control del preloader y mensaje de bloqueo
 window.addEventListener("load", () => {
@@ -895,11 +1232,40 @@ window.addEventListener("load", () => {
   preloaderOk.addEventListener("click", hidePreloader);
 });
 
+
+
+
+
+
+
+
+
+
+
 // Ocultar preloader cuando el audio comience a reproducirse (por si el usuario da play manual)
 radioPlayer.addEventListener("play", hidePreloader);
 
+
+
+
+
+
+
+
+
+
+
 // También ocultar si el usuario selecciona una estación manualmente
 stationList.addEventListener("click", hidePreloader);
+
+
+
+
+
+
+
+
+
 
 window.addEventListener("load", () => {
   const preloader = document.getElementById("preloader");
@@ -953,16 +1319,41 @@ window.addEventListener("load", () => {
   }
 });
 
+
+
+
+
+
+
+
+
+
+
 // Ocultar preloader cuando el audio comience a reproducirse (por si el usuario da play manual)
 radioPlayer.addEventListener("play", hidePreloader);
 
+
+
+
+
+
 // También ocultar si el usuario selecciona una estación manualmente
 stationList.addEventListener("click", hidePreloader);
+
+
+
+
+
 
 function hidePreloader() {
   const preloader = document.getElementById("preloader");
   if (preloader) preloader.style.display = "none";
 }
+
+
+
+
+
 
 // --- INICIALIZACIÓN ÚNICA Y CONTROL DE PRELOADER ---
 window.addEventListener("load", () => {
@@ -1027,13 +1418,63 @@ window.addEventListener("load", () => {
   }
 });
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Ocultar preloader cuando el audio comience a reproducirse (por si el usuario da play manual)
 radioPlayer.addEventListener("play", hidePreloader);
 
+
+
+
+
+
 // También ocultar si el usuario selecciona una estación manualmente
 stationList.addEventListener("click", hidePreloader);
+
+
+
+
+
 
 function hidePreloader() {
   const preloader = document.getElementById("preloader");
   if (preloader) preloader.style.display = "none";
 }
+
+
+
+
+
+
+
+function tryReconnect() {
+  const scheduled = getScheduledStation();
+  if (!scheduled || !scheduled.station || !scheduled.station.url) return;
+
+  console.warn("Desconexión detectada. Intentando reconectar...");
+  setTimeout(() => {
+    if (radioPlayer.paused || radioPlayer.readyState < 3) {
+      console.log("Reconectando a " + scheduled.station.name);
+      radioPlayer.src = scheduled.station.url + "?t=" + Date.now(); // Forzar recarga
+      radioPlayer.load();
+      radioPlayer.play().catch((e) => {
+        console.warn("Error al reproducir tras reconexión:", e);
+      });
+    }
+  }, 1000); // Esperar 1 segundo antes de intentar reconexión
+}
+//😁👍
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
