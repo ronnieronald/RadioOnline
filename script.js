@@ -333,7 +333,7 @@ const schedule = [
 
   {
     startTime: "18:00:00",
-    endTime: "19:00:00",
+    endTime: "20:00:00",
     station: {
       name: "Radio DiospySuyana",
       url: "https://cast2.my-control-panel.com/proxy/diospis1/stream",
@@ -348,7 +348,7 @@ const schedule = [
 
   {
     startTime: "18:00:00",
-    endTime: "19:00:00",
+    endTime: "20:00:00",
     station:   {
       name: "Radio Bethel",
       url: "https://alfa.betheltv.tv/radiobethel/1/icecast.audio",
@@ -362,7 +362,7 @@ const schedule = [
 
 
   {
-    startTime: "19:00:00",
+    startTime: "20:00:00",
     endTime: "23:59:59",
     station:  {
     name: "Al Fin Radio",
