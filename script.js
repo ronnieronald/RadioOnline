@@ -340,7 +340,7 @@ const schedule = [
       logo: "/assets/RadioDiospysuyana.jpg"
     },
     programName: "Encuentro Latinoamericano",
-    days: [1, 3],
+    days: [1, 3, 5],
   },
 
 
@@ -355,7 +355,7 @@ const schedule = [
       logo: "/assets/RadioBethel.jpg"
     },
     programName: "Praise The Lord",
-    days: [2, 4, 5],
+    days: [2, 4],
   },
 
 
