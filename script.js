@@ -63,7 +63,7 @@ const schedule = [
 
   {
     startTime: "06:56:00",
-    endTime: "07:05:00",
+    endTime: "07:06:00",
     station: {
       name: "Radio La Unción",
       url: "https://jml-stream.com:8010/app.aac",
