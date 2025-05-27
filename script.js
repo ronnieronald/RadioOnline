@@ -697,12 +697,12 @@ function getScheduledStation() {
 
 // Verificar y actualizar la estación según el horario
 function checkSchedule() {
-  if (!isManualSelection) {
+  if (!isManualSelection) { // Solo ejecuta si NO estás en modo manual
     const scheduled = getScheduledStation();
     if (scheduled) {
       if (radioPlayer.src !== scheduled.station.url || (!isPlaying && !radioPlayer.paused)) {
         playStation(scheduled.station);
-        updateMediaSession(scheduled.station); // <-- Añade esto
+        updateMediaSession(scheduled.station); // Actualizar la sesión de medios
       }
       updateProgramTitle(
         scheduled.station.name,
@@ -723,6 +723,7 @@ function checkSchedule() {
     }
   }
   updateNextEvent(); // Actualizar el próximo evento al verificar el horario
+
   // Resetear selección manual al inicio de un nuevo programa
   const now = new Date();
   const currentSeconds =
@@ -731,8 +732,7 @@ function checkSchedule() {
     if (
       currentSeconds === timeToSeconds(s.startTime) &&
       now.getMilliseconds() < 100
-    ) {
-      isManualSelection = false;
+    ) { // <-- Esto puede ser opcional, pero lo puedes eliminar si no quieres que se resetee
       updateModeIndicator(); // Actualizar el indicador de modo
     }
   });
@@ -932,8 +932,6 @@ function updateCurrentDayIndicator() {
 
 
 
-
-
 // Inicializar
 renderStationList();
 checkSchedule();
@@ -1095,9 +1093,7 @@ document.getElementById("currentDayIndicator").addEventListener("keydown", (even
 
 
 
-
-
-// Detectar pérdida y reconexión de red
+// Detectar pérdida de red
 window.addEventListener("offline", () => {
   console.log("Conexión a la red perdida. Pausando reproducción.");
   radioPlayer.pause();
@@ -1105,38 +1101,15 @@ window.addEventListener("offline", () => {
   isPlaying = false;
 });
 
-
-
-
-
-
-
-
-
-
+// Detectar reconexión de red
 window.addEventListener("online", () => {
   console.log("Conexión a la red restablecida. Intentando reanudar reproducción.");
-  if (!isManualSelection) {
-    const scheduled = getScheduledStation();
-    if (scheduled) {
-      playStation(scheduled.station);
-    }
-  } else if (radioPlayer.src) {
-    radioPlayer.play().then(() => {
-      playPauseIcon.src = "https://img.icons8.com/ios-filled/50/000000/pause.png";
-      isPlaying = true;
-    });
-  }
+  tryReconnect();
 });
 
-
-
-
-
-
-
-
-
+// Manejar errores del reproductor
+radioPlayer.addEventListener("error", tryReconnect);
+radioPlayer.addEventListener("stalled", tryReconnect); // Por si el buffer se queda vacío
 
 function updateMediaSession(station, programName = "") {
   if ('mediaSession' in navigator && station) {
@@ -1187,12 +1160,6 @@ function hidePreloader() {
   const preloader = document.getElementById("preloader");
   if (preloader) preloader.style.display = "none";
 }
-
-
-
-
-
-
 
 
 
@@ -1304,7 +1271,6 @@ window.addEventListener("load", () => {
       isPlaying = true;
       updateMediaSession(scheduled.station);
     }).catch(() => {
-      // Bloqueo de reproducción automática
       preloaderMsg.textContent = "La reproducción automática ha sido bloqueada por el navegador. Por favor, haz clic en el botón Iniciar para comenzar la reproducción.";
       preloaderStart.style.display = "inline-block";
       preloaderStart.onclick = iniciarRadio;
@@ -1428,11 +1394,6 @@ window.addEventListener("load", () => {
 
 
 
-
-
-
-
-
 // Ocultar preloader cuando el audio comience a reproducirse (por si el usuario da play manual)
 radioPlayer.addEventListener("play", hidePreloader);
 
@@ -1460,21 +1421,37 @@ function hidePreloader() {
 
 
 
+let reconnectAttempts = 0; // Contador de intentos de reconexión
+
 function tryReconnect() {
   const scheduled = getScheduledStation();
   if (!scheduled || !scheduled.station || !scheduled.station.url) return;
 
   console.warn("Desconexión detectada. Intentando reconectar...");
+
+  // Calcular el tiempo de espera entre intentos (progresivo)
+  const retryDelay = Math.min(30000, 1000 * Math.pow(2, reconnectAttempts)); // Máximo 30 segundos
+
   setTimeout(() => {
     if (radioPlayer.paused || radioPlayer.readyState < 3) {
-      console.log("Reconectando a " + scheduled.station.name);
-      radioPlayer.src = scheduled.station.url + "?t=" + Date.now(); // Forzar recarga
+      reconnectAttempts++;
+      console.log(`Intento de reconexión #${reconnectAttempts} a ${scheduled.station.name}`);
+
+      // Forzar recarga del stream
+      radioPlayer.src = scheduled.station.url + "?t=" + Date.now();
       radioPlayer.load();
-      radioPlayer.play().catch((e) => {
+
+      radioPlayer.play().then(() => {
+        console.log("Reconexión exitosa.");
+        reconnectAttempts = 0; // Reiniciar contador al reconectar
+        playPauseIcon.src = "https://img.icons8.com/ios-filled/50/000000/pause.png";
+        isPlaying = true;
+      }).catch((e) => {
         console.warn("Error al reproducir tras reconexión:", e);
+        tryReconnect(); // Intentar nuevamente
       });
     }
-  }, 1000); // Esperar 1 segundo antes de intentar reconexión
+  }, retryDelay);
 }
 //😁👍
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
