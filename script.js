@@ -986,19 +986,6 @@ window.addEventListener("load", () => {
 
 
 
-document.getElementById("scrollToTopButton").addEventListener("click", () => {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth", // Desplazamiento suave
-  });
-});
-
-
-
-
-
-
-
 
 document.getElementById("shuffleButton").addEventListener("click", () => {
   const stationsList = document.querySelectorAll("#stationList li");
