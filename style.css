@@ -155,28 +155,6 @@ h1 {
 
 
 
-#scrollToTopButton {
-  padding: 10px 20px;
-  font-size: 1em;
-  color: white;
-  background-color: #0b49e5;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-
-
-
-
-#scrollToTopButton:hover {
-  background-color: #1c30e4;
-}
-
-
-
-
 
 #controls {
   display: flex;
