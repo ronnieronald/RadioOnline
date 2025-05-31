@@ -414,7 +414,7 @@ const schedule = [
     logo: "/assets/RadioPoderCelestial.jpg"
   },
     programName: "break",
-    days: [1, 2, 3, 4, 5],
+    days: [6],
   },
     {
     startTime: "09:00:00",
