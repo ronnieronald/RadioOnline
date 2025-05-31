@@ -407,7 +407,41 @@ const schedule = [
 
   {
     startTime: "08:00:00",
-    endTime: "14:00:00",
+    endTime: "09:00:00",
+    station:  {
+      name: "Radio La Unción",
+      url: "https://jml-stream.com:8010/app.aac",
+      logo: "/assets/RadioLaUncion.jpg"
+    },
+    programName: "Break con Dios",
+    days: [6],
+  },
+    {
+    startTime: "09:00:00",
+    endTime: "10:00:00",
+    station:   {
+      name: "Radio Nueva Luz",
+      url: "https://conectperu.com/8324/stream",
+      logo: "/assets/RadioNuevaLuz.jpg"
+    },
+    programName: "Programa N°A",
+    days: [6],
+  },
+    {
+    startTime: "10:00:00",
+    endTime: "11:00:00",
+    station:   {
+      name: "Radio Nueva Luz",
+      url: "https://conectperu.com/8324/stream",
+      logo: "/assets/RadioNuevaLuz.jpg"
+    },
+    programName: "La Voz Celestial",
+    days: [6],
+  },
+
+  {
+    startTime: "11:00:00",
+    endTime: "13:00:00",
     station:  {
       name: "Radio La Unción",
       url: "https://jml-stream.com:8010/app.aac",
@@ -419,9 +453,8 @@ const schedule = [
 
 
 
-
   {
-    startTime: "14:00:00",
+    startTime: "13:00:00",
     endTime: "15:00:00",
     station:  {
       name: "Radio Vida",
