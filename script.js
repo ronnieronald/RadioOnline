@@ -619,9 +619,10 @@ function renderStationList() {
 
 // Actualizar la UI de la lista de estaciones
 function updateStationListUI(activeUrl) {
+  console.log("Actualizando lista de estaciones para URL activa:", activeUrl);
   Array.from(stationList.children).forEach((li) => {
     const station = stations.find((s) => s.name === li.textContent);
-    li.classList.toggle("active", station.url === activeUrl);
+    li.classList.toggle("active", station && station.url === activeUrl);
   });
 }
 
@@ -705,45 +706,27 @@ function getScheduledStation() {
 
 // Verificar y actualizar la estación según el horario
 function checkSchedule() {
-  if (!isManualSelection) { // Solo ejecuta si NO estás en modo manual
+  console.log("Ejecutando checkSchedule...");
+  if (!isManualSelection) {
     const scheduled = getScheduledStation();
     if (scheduled) {
+      console.log("Estación programada:", scheduled.station.name);
       if (radioPlayer.src !== scheduled.station.url || (!isPlaying && !radioPlayer.paused)) {
         playStation(scheduled.station);
-        updateMediaSession(scheduled.station); // Actualizar la sesión de medios
+        updateMediaSession(scheduled.station);
       }
-      updateProgramTitle(
-        scheduled.station.name,
-        scheduled.endTime,
-        scheduled.programName,
-        true // Mostrar nombre del programa
-      );
-      // Ejemplo en modo automático:
-      updateMediaSession(scheduled.station, scheduled.programName);
+      updateProgramTitle(scheduled.station.name, scheduled.endTime);
+      updateStationListUI(scheduled.station.url); // Asegúrate de que esto no sobrescriba el estado manual
     } else {
       radioPlayer.pause();
       radioPlayer.src = "";
       updateProgramTitle(null, null);
       updateStationListUI(null);
-      playPauseIcon.src =
-        "https://img.icons8.com/ios-filled/50/000000/play.png";
+      playPauseIcon.src = "https://img.icons8.com/ios-filled/50/000000/play.png";
       isPlaying = false;
     }
   }
-  updateNextEvent(); // Actualizar el próximo evento al verificar el horario
-
-  // Resetear selección manual al inicio de un nuevo programa
-  const now = new Date();
-  const currentSeconds =
-    now.getHours() * 3600 + now.getMinutes() * 60 + now.getSeconds();
-  schedule.forEach((s) => {
-    if (
-      currentSeconds === timeToSeconds(s.startTime) &&
-      now.getMilliseconds() < 100
-    ) { // <-- Esto puede ser opcional, pero lo puedes eliminar si no quieres que se resetee
-      updateModeIndicator(); // Actualizar el indicador de modo
-    }
-  });
+  updateNextEvent();
 }
 
 
@@ -980,13 +963,8 @@ window.addEventListener("load", () => {
       isPlaying = true;
       userMessage.remove(); // Eliminar el mensaje si la reproducción automática funciona
       updateMediaSession(scheduled.station); // <-- Añade esto
-      updateStationListUI(scheduled.station.url); // Asegura que la UI se actualice
     }).catch(() => {
-      preloaderMsg.textContent = "La reproducción automática fue bloqueada. Por favor, haga clic en el botón de Play/Pause para iniciar la reproducción.";
-      preloaderOk.style.display = "inline-block";
-      playPauseIcon.src = "https://img.icons8.com/ios-filled/50/000000/play.png";
-      isPlaying = false;
-      updateStationListUI(scheduled.station.url); // Actualiza la UI incluso si la reproducción es bloqueada
+      console.log("Reproducción automática bloqueada.");
     });
   } else {
     updateProgramTitle(null, null);
@@ -1209,7 +1187,25 @@ window.addEventListener("load", () => {
   }
 
   // Botón OK para cerrar el preloader manualmente
-  preloaderOk.addEventListener("click", hidePreloader);
+  preloaderOk.addEventListener("click", () => {
+    if (scheduled) {
+      radioPlayer.src = scheduled.station.url;
+      radioPlayer.play().then(() => {
+        hidePreloader();
+        updateProgramTitle(scheduled.station.name, scheduled.endTime);
+        playPauseIcon.src = "https://img.icons8.com/ios-filled/50/000000/pause.png";
+        isPlaying = true;
+        updateMediaSession(scheduled.station);
+
+        // Asegúrate de que la lista de estaciones se actualice correctamente
+        setTimeout(() => {
+          updateStationListUI(scheduled.station.url); // Marcar la estación en la lista
+        }, 100); // Agrega un pequeño retraso para garantizar que la lista esté lista
+      }).catch(() => {
+        console.warn("Error al intentar reproducir la estación programada.");
+      });
+    }
+  });
 });
 
 
@@ -1263,7 +1259,6 @@ window.addEventListener("load", () => {
         isPlaying = true;
         updateMediaSession(scheduled.station);
       }).catch(() => {
-        // Si aún falla, solo oculta el preloader
         hidePreloader();
       });
     } else {
