@@ -391,7 +391,7 @@ const schedule = [
 
 
   {
-    startTime: "07:00:00",
+    startTime: "07:06:00",
     endTime: "08:00:00",
     station: {
       name: "Radio Vida",
