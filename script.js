@@ -441,7 +441,7 @@ const schedule = [
 
   {
     startTime: "11:00:00",
-    endTime: "13:00:00",
+    endTime: "12:00:00",
     station:  {
       name: "Radio La Unción",
       url: "https://jml-stream.com:8010/app.aac",
@@ -451,7 +451,17 @@ const schedule = [
     days: [6],
   },
 
-
+    {
+    startTime: "12:00:00",
+    endTime: "13:00:00",
+    station:   {
+      name: "Radio Nueva Luz",
+      url: "https://conectperu.com/8324/stream",
+      logo: "/assets/RadioNuevaLuz.jpg"
+    },
+    programName: "Revolución Juvenial",
+    days: [6],
+  },
 
   {
     startTime: "13:00:00",
