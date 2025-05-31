@@ -370,7 +370,7 @@ z-index:9999;
   cursor:pointer;
 }
 
-#preloaderMsg {
+.preloaderMsg {
   color:#f0f
   margin-top:20px;
   font-size:1.2rem;
