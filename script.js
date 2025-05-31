@@ -713,7 +713,7 @@ function checkSchedule() {
       console.log("Estación programada:", scheduled.station.name);
       if (radioPlayer.src !== scheduled.station.url || (!isPlaying && !radioPlayer.paused)) {
         playStation(scheduled.station);
-        updateMediaSession(scheduled.station);
+        updateMediaSession(scheduled.station, scheduled.programName);
       }
       updateProgramTitle(scheduled.station.name, scheduled.endTime);
       updateStationListUI(scheduled.station.url); // Asegúrate de que esto no sobrescriba el estado manual
@@ -962,7 +962,7 @@ window.addEventListener("load", () => {
         "https://img.icons8.com/ios-filled/50/000000/pause.png";
       isPlaying = true;
       userMessage.remove(); // Eliminar el mensaje si la reproducción automática funciona
-      updateMediaSession(scheduled.station); // <-- Añade esto
+      updateMediaSession(scheduled.station, scheduled.programName); // <-- Añade esto
     }).catch(() => {
       console.log("Reproducción automática bloqueada.");
     });
@@ -1107,13 +1107,11 @@ function updateMediaSession(station, programName = "") {
     const pageTitle = document.title || "Radio Online";
     let artistText = "";
 
-    // Solo mostrar "Radio Online" en modo manual
-    if (isManualSelection) {
-      artistText = "Radio Online";
-    } else if (programName && programName.trim() !== "") {
+    // Mostrar el nombre del programa solo en modo automático
+    if (!isManualSelection && programName && programName.trim() !== "") {
       artistText = programName;
-    } else {
-      artistText = "";
+    } else if (isManualSelection) {
+      artistText = "Radio Online";
     }
 
     navigator.mediaSession.metadata = new window.MediaMetadata({
@@ -1124,10 +1122,12 @@ function updateMediaSession(station, programName = "") {
         { src: station.logo || 'https://img.icons8.com/ios-filled/100/000000/radio.png', sizes: '512x512', type: 'image/png' }
       ]
     });
+
     // Botón pausa
     navigator.mediaSession.setActionHandler('pause', () => {
       radioPlayer.pause();
     });
+
     // Botón detener
     navigator.mediaSession.setActionHandler('stop', () => {
       radioPlayer.pause();
@@ -1171,7 +1171,7 @@ window.addEventListener("load", () => {
       updateProgramTitle(scheduled.station.name, scheduled.endTime);
       playPauseIcon.src = "https://img.icons8.com/ios-filled/50/000000/pause.png";
       isPlaying = true;
-      updateMediaSession(scheduled.station);
+      updateMediaSession(scheduled.station, scheduled.programName);
     }).catch(() => {
       // Bloqueo de reproducción automática
       preloaderMsg.textContent = "La reproducción automática fue bloqueada. Por favor, haga clic en el botón de Play/Pause para iniciar la reproducción.";
@@ -1195,7 +1195,7 @@ window.addEventListener("load", () => {
         updateProgramTitle(scheduled.station.name, scheduled.endTime);
         playPauseIcon.src = "https://img.icons8.com/ios-filled/50/000000/pause.png";
         isPlaying = true;
-        updateMediaSession(scheduled.station);
+        updateMediaSession(scheduled.station, scheduled.programName);
 
         // Asegúrate de que la lista de estaciones se actualice correctamente
         setTimeout(() => {
@@ -1257,7 +1257,7 @@ window.addEventListener("load", () => {
         updateProgramTitle(scheduled.station.name, scheduled.endTime);
         playPauseIcon.src = "https://img.icons8.com/ios-filled/50/000000/pause.png";
         isPlaying = true;
-        updateMediaSession(scheduled.station);
+        updateMediaSession(scheduled.station, scheduled.programName);
       }).catch(() => {
         hidePreloader();
       });
@@ -1277,7 +1277,7 @@ window.addEventListener("load", () => {
       updateProgramTitle(scheduled.station.name, scheduled.endTime);
       playPauseIcon.src = "https://img.icons8.com/ios-filled/50/000000/pause.png";
       isPlaying = true;
-      updateMediaSession(scheduled.station);
+      updateMediaSession(scheduled.station, scheduled.programName);
     }).catch(() => {
       preloaderMsg.textContent = "La reproducción automática ha sido bloqueada por el navegador. Por favor, haz clic en el botón Iniciar para comenzar la reproducción.";
       preloaderStart.style.display = "inline-block";
@@ -1357,7 +1357,7 @@ window.addEventListener("load", () => {
         updateProgramTitle(scheduled.station.name, scheduled.endTime);
         playPauseIcon.src = "https://img.icons8.com/ios-filled/50/000000/pause.png";
         isPlaying = true;
-        updateMediaSession(scheduled.station);
+        updateMediaSession(scheduled.station, scheduled.programName);
       }).catch(() => {
         hidePreloaderAndUpdate();
       });
@@ -1376,7 +1376,7 @@ window.addEventListener("load", () => {
       updateProgramTitle(scheduled.station.name, scheduled.endTime);
       playPauseIcon.src = "https://img.icons8.com/ios-filled/50/000000/pause.png";
       isPlaying = true;
-      updateMediaSession(scheduled.station);
+      updateMediaSession(scheduled.station, scheduled.programName);
     }).catch(() => {
       preloaderMsg.textContent = "La reproducción automática ha sido bloqueada por el navegador. Por favor, haz clic en el botón Iniciar para comenzar la reproducción.";
       preloaderStart.style.display = "inline-block";
