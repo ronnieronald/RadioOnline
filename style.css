@@ -343,45 +343,10 @@ h1 {
 }
 
 
-.preloader{
-position:fixed;
-top:0;
-left:0;
-width:100vw;
-height:100vh;
-background:rgba(0,0,0,0.85);
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
-z-index:9999;
-}
 
 
-.preloaderStart{
-  display:none;
-  margin-top:30px;
-  padding:12px 32px;
-  font-size:1rem;
-  border:none;
-  border-radius:8px;
-  background:#fff;
-  color:#222;
-  cursor:pointer;
-}
-
-.preloaderMsg {
-  color:#f0f
-  margin-top:20px;
-  font-size:1.2rem;
-}
-.preloaderSpinner{
-  width:60px;
- height:60px;
-}
-
-.preloaderSpinner {
- animation: spin 1s linear infinite;
+#preloaderSpinner {
+  animation: spin 1s linear infinite;
 }
 
 
