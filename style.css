@@ -366,12 +366,12 @@ z-index:9999;
   border:none;
   border-radius:8px;
   background:#fff;
-  color:#fff;
+  color:#222;
   cursor:pointer;
 }
 
 #preloaderMsg {
-  color:#fff
+  color:#f0f
   margin-top:20px;
   font-size:1.2rem;
 }
