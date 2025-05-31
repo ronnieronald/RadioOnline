@@ -343,7 +343,7 @@ h1 {
 }
 
 
-#preloader{
+.preloader{
 position:fixed;
 top:0;
 left:0;
@@ -358,7 +358,7 @@ z-index:9999;
 }
 
 
-#preloaderStart{
+.preloaderStart{
   display:none;
   margin-top:30px;
   padding:12px 32px;
@@ -375,12 +375,12 @@ z-index:9999;
   margin-top:20px;
   font-size:1.2rem;
 }
-#preloaderSpinner{
+.preloaderSpinner{
   width:60px;
  height:60px;
 }
 
-#preloaderSpinner {
+.preloaderSpinner {
  animation: spin 1s linear infinite;
 }
 
