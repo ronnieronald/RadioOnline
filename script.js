@@ -408,13 +408,13 @@ const schedule = [
   {
     startTime: "08:00:00",
     endTime: "09:00:00",
-    station:  {
-      name: "Radio La Unción",
-      url: "https://jml-stream.com:8010/app.aac",
-      logo: "/assets/RadioLaUncion.jpg"
-    },
-    programName: "Break con Dios",
-    days: [6],
+    station:    {
+    name: "Radio Poder Celestial",
+    url: "https://stream-154.zeno.fm/tynupzcnv5quv?zt=eyJhbGciOiJIUzI1NiJ9.eyJzdHJlYW0iOiJ0eW51cHpjbnY1cXV2IiwiaG9zdCI6InN0cmVhbS0xNTQuemVuby5mbSIsInJ0dGwiOjUsImp0aSI6Im9Qek1GWG0tVDlDZ3ZnM2lHLVdubmciLCJpYXQiOjE3NDg0ODMxOTUsImV4cCI6MTc0ODQ4MzI1NX0.j7l_EmuxplKTjo6K-uHjDVXVmKynoNzsHPvPrbPKwwM",
+    logo: "/assets/RadioPoderCelestial.jpg"
+  },
+    programName: "break",
+    days: [1, 2, 3, 4, 5],
   },
     {
     startTime: "09:00:00",
