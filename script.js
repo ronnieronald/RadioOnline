@@ -1431,6 +1431,17 @@ function tryReconnect() {
     if (radioPlayer.paused || radioPlayer.readyState < 3) {
       reconnectAttempts++;
       console.log(`Intento de reconexión #${reconnectAttempts} a ${scheduled.station.name}`);
+      
+      
+      
+     document.getElementById("currentDayIndicator").addEventListener("click", () => {
+        const scheduleContainer = document.getElementById("scheduleContainer");
+        scheduleContainer.scrollIntoView({
+          behavior: "smooth", // Desplazamiento suave
+          block: "start", // Alinear al inicio del contenedor
+        });
+      });
+    
 
       // Forzar recarga del stream
       radioPlayer.src = scheduled.station.url + "?t=" + Date.now();
