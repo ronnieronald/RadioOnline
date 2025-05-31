@@ -459,7 +459,7 @@ const schedule = [
       url: "https://conectperu.com/8324/stream",
       logo: "/assets/RadioNuevaLuz.jpg"
     },
-    programName: "Revolución Juvenial",
+    programName: "Revolución Juvenil",
     days: [6],
   },
 
