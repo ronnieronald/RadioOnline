@@ -375,11 +375,12 @@ z-index:9999;
   margin-top:20px;
   font-size:1.2rem;
 }
-
+#preloaderSpinner{
+  width:60px;
+ height:60px;
+}
 
 #preloaderSpinner {
- width:60px;
- height:60px;
  animation: spin 1s linear infinite;
 }
 
