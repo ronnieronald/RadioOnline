@@ -980,8 +980,13 @@ window.addEventListener("load", () => {
       isPlaying = true;
       userMessage.remove(); // Eliminar el mensaje si la reproducción automática funciona
       updateMediaSession(scheduled.station); // <-- Añade esto
+      updateStationListUI(scheduled.station.url); // Asegura que la UI se actualice
     }).catch(() => {
-      console.log("Reproducción automática bloqueada.");
+      preloaderMsg.textContent = "La reproducción automática fue bloqueada. Por favor, haga clic en el botón de Play/Pause para iniciar la reproducción.";
+      preloaderOk.style.display = "inline-block";
+      playPauseIcon.src = "https://img.icons8.com/ios-filled/50/000000/play.png";
+      isPlaying = false;
+      updateStationListUI(scheduled.station.url); // Actualiza la UI incluso si la reproducción es bloqueada
     });
   } else {
     updateProgramTitle(null, null);
