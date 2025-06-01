@@ -507,7 +507,7 @@ const schedule = [
 
   {
     startTime: "08:00:00",
-    endTime: "10:30:00",
+    endTime: "10:20:00",
     station:  {
       name: "Radio Nueva Luz Complemento",
       url: "https://conectperu.com/8338/stream",
