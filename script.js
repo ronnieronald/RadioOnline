@@ -521,7 +521,7 @@ const schedule = [
 
 
   {
-    startTime: "10:30:00",
+    startTime: "10:20:00",
     endTime: "11:00:00",
     station:  {
     name: "Al Fin Radio",
