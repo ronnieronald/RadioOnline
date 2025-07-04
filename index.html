@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Radio Online</title>
+    <title>Radio Online V1.0</title>
     <link rel="stylesheet" href="style.css" />
     <link
       rel="shortcut icon"
@@ -12,34 +12,19 @@
     />
   </head>
   <body>
-    <div id="preloader" style="position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.85);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:9999;">
-      <img src="https://img.icons8.com/ios-filled/100/ffffff/loading.png" alt="Cargando..." id="preloaderSpinner" style="width:60px;height:60px;">
-      <div id="preloaderMsg" style="color:#fff;margin-top:20px;font-size:1.2rem;">Cargando radio...</div>
-      <button id="preloaderStart" style="display:none;margin-top:30px;padding:12px 32px;font-size:1rem;border:none;border-radius:8px;background:#fff;color:#222;cursor:pointer;">Iniciar</button>
+    <div id="preloader">
+      <img src="https://img.icons8.com/ios-filled/100/ffffff/loading.png" alt="Cargando radio..." id="preloaderSpinner">
+      <div id="preloaderMsg">Cargando radio...</div>
+      <button id="preloaderStart">Iniciar</button>
     </div>
     <div class="container">
       <h1 id="programTitle"></h1>
-      <span id="endTime"></span>
       <div id="controls">
-        <div id="scrollToStationsButton">
-          <img
-            src="https://img.icons8.com/?size=100&id=qYiiiITYvT0U&format=png&color=000000"
-            alt="Ir a estaciones"
-            id="scrollIcon"
-          />
-        </div>
         <div id="playPauseButton">
           <img
             id="playPauseIcon"
             src="https://img.icons8.com/ios-filled/50/000000/play.png"
-            alt="Play"
-          />
-        </div>
-        <div id="shuffleButton">
-          <img
-            src="https://img.icons8.com/?size=100&id=9986&format=png&color=000000"
-            alt="Seleccionar emisora aleatoria"
-            id="shuffleIcon"
+            alt="Reproducir"
           />
         </div>
       </div>
@@ -48,16 +33,12 @@
         <div id="nextEventDetails"></div>
       </div>
       <audio id="radioPlayer"></audio>
-      <audio id="transitionAudio" src="assets/High Technology.mp3"></audio>
       <div id="scheduleContainer">
         <h2 id="scheduleTitle">En Curso</h2>
         <ul id="programList"></ul>
       </div>
-      <div id="currentDayIndicator" role="button" tabindex="0">Lunes</div>
-  
+      <div id="currentDayIndicator" role="button" tabindex="0">Miércoles</div>
       <div id="modeIndicator">Modo: Automático</div>
-      <h2>Estaciones Disponibles</h2>
-      <ul id="stationList"></ul>
       <div id="footerText">
         <p>
           Al usar este servicio, aceptas los 
