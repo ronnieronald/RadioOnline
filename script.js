@@ -81,11 +81,11 @@ const schedule = [
     startTime: "08:03:00",
     endTime: "08:56:00",
     station: {
-      name: "Radio Nueva Luz",
-      url: "https://conectperu.com/8324/stream",
+      name: "Radio La Voz Celestial",
+      url: "https://stream3.rcast.net/67255",
       logo: "/assets/RadioNuevaLuz.jpg"
     },
-    programName: "Programa N°4",
+    programName: "undefined",
     days: [1, 2, 3, 4, 5],
   },
   {
