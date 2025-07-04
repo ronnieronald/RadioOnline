@@ -8,6 +8,42 @@ body {
   background-color: #f0f0f0;
 }
 
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+#preloaderSpinner {
+  width: 60px;
+  height: 60px;
+}
+
+#preloaderMsg {
+  color: #fff;
+  margin-top: 20px;
+  font-size: 1.2rem;
+}
+
+#preloaderStart {
+  display: none;
+  margin-top: 30px;
+  padding: 12px 32px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  background: #fff;
+  color: #222;
+  cursor: pointer;
+}
 
 
 
@@ -24,64 +60,13 @@ body {
 
 
 
-
-#playPauseButton {
-  cursor: pointer;
-  margin: 0; /* Elimina el margen */
-  padding: 0; /* Elimina el espacio interno */
+#playPauseButton img:hover {
+  transform: scale(1.1);
 }
 
 
 
 
-#playPauseButton img {
-  width: 40px; /* Ajusta el tamaño del ícono */
-  height: 40px;
-}
-
-
-
-
-#currentStation {
-  margin: 10px 0;
-  font-size: 1.2em;
-  color: #333;
-}
-
-
-
-
-#stationList {
-  list-style: none;
-  padding: 0;
-}
-
-
-
-
-#stationList li {
-  padding: 10px;
-  margin: 5px 0;
-  background-color: #e0e0e0;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-
-
-
-#stationList li:hover {
-  background-color: #d0d0d0;
-}
-
-
-
-
-#stationList li.active {
-  background-color: #60B5FF;
-  color: white;
-}
 
 
 
@@ -99,6 +84,14 @@ audio {
   text-align: center; /* Centrar el título */
 }
 
+.program-red {
+  color: #0062ff;
+  font-weight: bold;
+  display: block;
+  margin-top: 4px;
+  font-size: 0.7em;
+}
+
 
 
 
@@ -107,19 +100,6 @@ h1 {
   color: #222;
   margin: 0 0 10px 0;
 }
-
-
-
-
-#endTime {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 0.9em;
-  color: #555;
-}
-
-
 
 
 #nextEvent {
@@ -136,9 +116,6 @@ h1 {
   font-size: 0.9em;
   color: #555; /* Color más claro para los detalles */
 }
-
-
-
 
 #modeIndicator {
   position: absolute;
@@ -157,40 +134,14 @@ h1 {
 
 
 
-
 #controls {
   display: flex;
-  justify-content: space-between; /* Distribuir los elementos uniformemente */
+  justify-content: center; /* Centra horizontalmente */
   align-items: center;
-  width: 82%; /* El contenedor ocupa el 80% del ancho total */
-  margin: 0 auto; /* Centrar el contenedor horizontalmente */
+  width: 100%; /* O el ancho que prefieras */
+  margin: 0 auto;
   margin-top: 20px;
 }
-
-
-
-
-
-#scrollToStationsButton img,
-#playPauseButton img,
-#shuffleButton img {
-  width: 50px; /* Tamaño de los íconos */
-  height: 50px;
-  cursor: pointer;
-  transition: transform 0.2s;
-}
-
-
-
-
-
-#scrollToStationsButton img:hover,
-#playPauseButton img:hover,
-#shuffleButton img:hover {
-  transform: scale(1.1); /* Efecto de zoom al pasar el cursor */
-}
-
-
 
 
 
@@ -280,18 +231,6 @@ h1 {
 
 
 
-#programList li {
-  margin: 5px 0;
-  padding: 10px;
-  background-color: #f0f0f0;
-  border-radius: 5px;
-  font-size: 0.9em;
-}
-
-
-
-
-
 #currentDayIndicator {
   position: absolute;
   top: 10px;
@@ -338,10 +277,6 @@ h1 {
 
 
 
-.spin {
-  animation: spin 1s linear infinite;
-}
-
 
 
 
@@ -353,4 +288,41 @@ h1 {
 
 @keyframes spin {
   100% { transform: rotate(360deg); }
+}
+
+#waveLoader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5px;
+}
+
+/* Estilo de los puntos */
+.dot {
+  width: 7px;
+  height: 7px;
+  margin: 0 5px;
+  background-color: rgb(0, 153, 255); /* Color de los puntos */
+  border-radius: 50%;
+  animation: dot-bounce 1s linear infinite;
+}
+
+/* Animación de los puntos */
+.dot:nth-child(1) { animation-delay: 0s; }
+.dot:nth-child(2) { animation-delay: 0.2s; }
+.dot:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes dot-bounce {
+  0%, 100% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.7); opacity: 1; }
+}
+
+.blink-red {
+  color: #d32f2f !important;
+  animation: blink-red 1s steps(2, start) infinite;
+}
+
+@keyframes blink-red {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.2; }
 }
