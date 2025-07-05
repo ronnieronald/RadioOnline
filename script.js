@@ -306,7 +306,7 @@ const schedule = [
       url: "https://conectperu.com/8324/stream",
       logo: "/assets/RadioNuevaLuz.jpg"
     },
-    programName: "Yo Soy el Camino, La Verdad y La Vida",
+    programName: "Fe Avivamiento",
     days: [6],
   },
   {
