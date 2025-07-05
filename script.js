@@ -324,7 +324,7 @@ const schedule = [
     startTime: "11:00:00",
     endTime: "13:00:00",
     station: {
-      name: "Radio Nueva Luz",
+      name: "Radio La Voz Celestial",
       url: "https://stream3.rcast.net/67255",
       logo: "/assets/RadioNuevaLuz.jpg"
     },
