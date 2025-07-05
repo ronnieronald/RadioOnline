@@ -317,26 +317,15 @@ const schedule = [
       url: "https://conectperu.com/8324/stream",
       logo: "/assets/RadioNuevaLuz.jpg"
     },
-    programName: "La Voz Celestial",
+    programName: "Programa B",
     days: [6],
   },
   {
     startTime: "11:00:00",
-    endTime: "12:00:00",
-    station: {
-      name: "Radio La Unción",
-      url: "https://jml-stream.com:8010/app.aac",
-      logo: "/assets/RadioLaUncion.jpg"
-    },
-    programName: "Break con Dios",
-    days: [6],
-  },
-  {
-    startTime: "12:00:00",
     endTime: "13:00:00",
     station: {
       name: "Radio Nueva Luz",
-      url: "https://conectperu.com/8324/stream",
+      url: "https://stream3.rcast.net/67255",
       logo: "/assets/RadioNuevaLuz.jpg"
     },
     programName: "Revolución Juvenil",
