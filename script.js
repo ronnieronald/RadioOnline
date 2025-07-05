@@ -68,7 +68,7 @@ const schedule = [
   },
   {
     startTime: "07:56:00",
-    endTime: "08:00:00",
+    endTime: "08:03:00",
     station: {
       name: "Radio La Unción",
       url: "https://jml-stream.com:8010/app.aac",
@@ -78,14 +78,14 @@ const schedule = [
     days: [1, 2, 3, 4, 5],
   },
   {
-    startTime: "08:00:00",
+    startTime: "08:03:00",
     endTime: "08:56:00",
     station: {
-      name: "Radio La Voz Celestial",
-      url: "https://stream3.rcast.net/67255",
+      name: "Radio Nueva Luz",
+      url: "https://conectperu.com/8324/stream",
       logo: "/assets/RadioNuevaLuz.jpg"
     },
-    programName: "undefined",
+    programName: "Programa N°4",
     days: [1, 2, 3, 4, 5],
   },
   {
@@ -147,11 +147,11 @@ const schedule = [
     startTime: "11:00:00",
     endTime: "12:00:00",
     station: {
-      name: "Radio La Voz Celestial",
-      url: "https://stream3.rcast.net/67255",
+      name: "Radio Nueva Luz",
+      url: "https://conectperu.com/8324/stream",
       logo: "/assets/RadioNuevaLuz.jpg"
     },
-    programName: "undefined",
+    programName: "La Voz Celestial",
     days: [1, 2, 3, 4, 5],
   },
   {
@@ -421,8 +421,9 @@ const nextEventDetails = document.getElementById("nextEventDetails");
 const programList = document.getElementById("programList");
 const currentDayIndicator = document.getElementById("currentDayIndicator");
 let isPlaying = false;
-const MAX_RECONNECT_ATTEMPTS = 5;
 let reconnectAttempts = 0;
+const MAX_RECONNECT_ATTEMPTS = 5;
+let radioStatus = "connecting"; // "connecting", "reconnecting", "playing", "disconnected"
 
 // Convertir hora en formato HH:mm:ss a segundos desde medianoche
 function timeToSeconds(time) {
@@ -449,10 +450,20 @@ function getScheduledStation() {
 
 // Actualizar el título y hora de finalización
 function updateProgramTitle(stationName, programName, endTime) {
-  if (stationName && programName) {
+  if (radioStatus === "connecting") {
+    programTitle.innerHTML = `
+      <span>${stationName || "Radio Online"}</span><br>
+      <span class="program-red">Conectando...</span>
+    `;
+  } else if (radioStatus === "reconnecting") {
+    programTitle.innerHTML = `
+      <span>${stationName || "Radio Online"}</span><br>
+      <span class="program-red">Reconectando...</span>
+    `;
+  } else if (stationName && programName) {
     programTitle.innerHTML = `
       <span>${stationName}</span><br>
-      <span class="program-red">${programName}</span>
+      <span class="program-black">${programName}</span>
     `;
   } else if (stationName) {
     programTitle.textContent = stationName;
@@ -644,29 +655,53 @@ radioPlayer.addEventListener("pause", () => {
   isPlaying = false;
 });
 
-// Intentar reconexión automática
+// Al iniciar la radio
+radioStatus = "connecting";
+updateProgramTitle();
+
+// Cuando la radio se reproduce correctamente
+radioPlayer.addEventListener("playing", () => {
+  radioStatus = "playing";
+  reconnectAttempts = 0;
+  const scheduled = getScheduledStation();
+  updateProgramTitle(scheduled?.station?.name, scheduled?.programName);
+});
+
+// Si hay error o no se puede conectar
+radioPlayer.addEventListener("error", () => {
+  radioStatus = "disconnected";
+  const scheduled = getScheduledStation();
+  updateProgramTitle(scheduled?.station?.name, scheduled?.programName);
+});
+radioPlayer.addEventListener("stalled", () => {
+  radioStatus = "disconnected";
+  const scheduled = getScheduledStation();
+  updateProgramTitle(scheduled?.station?.name, scheduled?.programName);
+});
+
+// Reconexión automática si el stream se corta
+radioPlayer.addEventListener("error", tryReconnect);
+radioPlayer.addEventListener("stalled", tryReconnect);
+
 function tryReconnect() {
   const scheduled = getScheduledStation();
-  if (!scheduled || !scheduled.station || !scheduled.station.url || reconnectAttempts >= MAX_RECONNECT_ATTEMPTS) {
-    console.log("No se puede reconectar: sin estación o máximo de intentos alcanzado.");
-    return;
-  }
+  if (!scheduled || !scheduled.station || !scheduled.station.url) return;
 
-  const retryDelay = Math.min(30000, 1000 * Math.pow(2, reconnectAttempts));
+  radioStatus = "reconnecting";
+  updateProgramTitle(scheduled.station.name, scheduled.programName);
+
   setTimeout(() => {
-    if (radioPlayer.paused || radioPlayer.readyState < 3) {
-      reconnectAttempts++;
-      radioPlayer.src = scheduled.station.url + "?t=" + Date.now();
-      radioPlayer.load();
-      radioPlayer.play().then(() => {
-        reconnectAttempts = 0;
-        playPauseIcon.src = "https://img.icons8.com/ios-filled/50/000000/pause.png";
-        isPlaying = true;
-      }).catch(() => {
-        tryReconnect();
-      });
-    }
-  }, retryDelay);
+    reconnectAttempts++;
+    radioPlayer.src = scheduled.station.url + "?t=" + Date.now();
+    radioPlayer.load();
+    radioPlayer.play().then(() => {
+      radioStatus = "playing";
+      reconnectAttempts = 0;
+      updateProgramTitle(scheduled.station.name, scheduled.programName);
+    }).catch(() => {
+      tryReconnect();
+    });
+  }, 3000);
 }
 
 // Detectar pérdida y reconexión de red
@@ -681,9 +716,6 @@ window.addEventListener("online", () => {
   console.log("Conexión a la red restablecida. Intentando reanudar reproducción.");
   tryReconnect();
 });
-
-radioPlayer.addEventListener("error", tryReconnect);
-radioPlayer.addEventListener("stalled", tryReconnect);
 
 // Manejar clics y teclado en currentDayIndicator
 currentDayIndicator.addEventListener("click", () => {
