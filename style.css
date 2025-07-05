@@ -85,11 +85,21 @@ audio {
 }
 
 .program-red {
-  color: black;
+  color: #d32f2f;      /* Rojo para estados */
   font-weight: bold;
   display: block;
   margin-top: 4px;
-  font-size: 0.7em;
+  font-size: 1em;
+  text-align: center;
+}
+
+.program-black {
+  color: #222;         /* Negro para el nombre del programa */
+  font-weight: bold;
+  display: block;
+  margin-top: 4px;
+  font-size: 1em;
+  text-align: center;
 }
 
 
