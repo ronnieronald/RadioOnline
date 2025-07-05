@@ -306,7 +306,7 @@ const schedule = [
       url: "https://conectperu.com/8324/stream",
       logo: "/assets/RadioNuevaLuz.jpg"
     },
-    programName: "Fe Avivamiento",
+    programName: "Programa N°A",
     days: [6],
   },
   {
@@ -424,6 +424,7 @@ let isPlaying = false;
 let reconnectAttempts = 0;
 const MAX_RECONNECT_ATTEMPTS = 5;
 let radioStatus = "connecting"; // "connecting", "reconnecting", "playing", "disconnected"
+let isReconnecting = false;
 
 // Convertir hora en formato HH:mm:ss a segundos desde medianoche
 function timeToSeconds(time) {
@@ -450,12 +451,7 @@ function getScheduledStation() {
 
 // Actualizar el título y hora de finalización
 function updateProgramTitle(stationName, programName, endTime) {
-  if (radioStatus === "connecting") {
-    programTitle.innerHTML = `
-      <span>${stationName || "Radio Online"}</span><br>
-      <span class="program-red">Conectando...</span>
-    `;
-  } else if (radioStatus === "reconnecting") {
+  if (radioStatus === "reconnecting") {
     programTitle.innerHTML = `
       <span>${stationName || "Radio Online"}</span><br>
       <span class="program-red">Reconectando...</span>
@@ -517,6 +513,8 @@ function updateMediaSession(station, programName = "") {
 
 // Verificar y actualizar la estación según el horario
 function checkSchedule() {
+  if (isReconnecting) return; // No hacer nada si está reconectando
+
   const scheduled = getScheduledStation();
   if (scheduled) {
     if (radioPlayer.src !== scheduled.station.url || (!isPlaying && !radioPlayer.paused)) {
@@ -687,16 +685,18 @@ function tryReconnect() {
   const scheduled = getScheduledStation();
   if (!scheduled || !scheduled.station || !scheduled.station.url) return;
 
+  if (isReconnecting) return; // Evita múltiples reconexiones
+  isReconnecting = true;
+
   radioStatus = "reconnecting";
   updateProgramTitle(scheduled.station.name, scheduled.programName);
 
   setTimeout(() => {
-    reconnectAttempts++;
     radioPlayer.src = scheduled.station.url + "?t=" + Date.now();
     radioPlayer.load();
     radioPlayer.play().then(() => {
       radioStatus = "playing";
-      reconnectAttempts = 0;
+      isReconnecting = false;
       updateProgramTitle(scheduled.station.name, scheduled.programName);
     }).catch(() => {
       tryReconnect();
