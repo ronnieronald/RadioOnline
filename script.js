@@ -414,6 +414,7 @@ let reconnectAttempts = 0;
 const MAX_RECONNECT_ATTEMPTS = 5;
 let radioStatus = "connecting"; // "connecting", "reconnecting", "playing", "disconnected"
 let isReconnecting = false;
+let pausedManually = false;
 
 // Convertir hora en formato HH:mm:ss a segundos desde medianoche
 function timeToSeconds(time) {
@@ -615,22 +616,24 @@ function updateCurrentDayIndicator() {
 
 // Manejar el botón de reproducir/pausar
 playPauseButton.addEventListener("click", () => {
-  if (radioPlayer.paused) {
-    const scheduled = getScheduledStation();
-    if (scheduled && !radioPlayer.src) {
-      playStation(scheduled.station);
-    } else {
-      radioPlayer.play().then(() => {
-        playPauseIcon.src = "https://img.icons8.com/ios-filled/50/000000/pause.png";
-        isPlaying = true;
-      });
-    }
-  } else {
-    radioPlayer.pause();
-    playPauseIcon.src = "https://img.icons8.com/ios-filled/50/000000/play.png";
-    isPlaying = false;
-  }
-});
+     if (radioPlayer.paused) {
+       pausedManually = false;
+       const scheduled = getScheduledStation();
+       if (scheduled && !radioPlayer.src) {
+         playStation(scheduled.station);
+       } else {
+         radioPlayer.play().then(() => {
+           playPauseIcon.src = "https://img.icons8.com/ios-filled/50/000000/pause.png";
+           isPlaying = true;
+         });
+       }
+     } else {
+       pausedManually = true;
+       radioPlayer.pause();
+       playPauseIcon.src = "https://img.icons8.com/ios-filled/50/000000/play.png";
+       isPlaying = false;
+     }
+   });
 
 // Actualizar ícono cuando el audio se pausa o reproduce
 radioPlayer.addEventListener("play", () => {
@@ -695,16 +698,18 @@ function tryReconnect() {
 
 // Detectar pérdida y reconexión de red
 window.addEventListener("offline", () => {
-  console.log("Conexión a la red perdida. Pausando reproducción.");
+     pausedManually = false;
+     console.log("Conexión a la red perdida. Pausando reproducción.");
   radioPlayer.pause();
   playPauseIcon.src = "https://img.icons8.com/ios-filled/50/000000/play.png";
   isPlaying = false;
 });
 
 window.addEventListener("online", () => {
-  console.log("Conexión a la red restablecida. Intentando reanudar reproducción.");
-  tryReconnect();
-});
+     if (!pausedManually) {
+       tryReconnect();
+     }
+   });
 
 // Manejar clics y teclado en currentDayIndicator
 currentDayIndicator.addEventListener("click", () => {
